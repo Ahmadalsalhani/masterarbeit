@@ -1,0 +1,81 @@
+%!TEX root = thesis.tex
+
+\chapter{Einleitung}
+
+Die schnelle Entwicklung generativer KI-Systeme hat in den vergangenen Jahren zu erheblichen Fortschritten in der automatischen Generierung von Texten sowie in der Verarbeitung komplexer Informationen geführt. Insbesondere sogenannte Large Language Models (LLMs), wie GPT-basierte Modelle oder Systeme wie GitHub Copilot, zeigen bemerkenswerte Fähigkeiten in der Text- und Codegenerierung, der Problemlösung sowie in der Verarbeitung umfangreicher Wissensbestände \cite{brown2020languagemodelsfewshotlearners}.
+
+Im Kontext der Softwareentwicklung eröffnen diese Modelle neue Möglichkeiten zur Unterstützung verschiedener Entwicklungsprozesse. LLMs können beispielsweise bei der Generierung von Programmcode, der Analyse bestehender Systeme, der Erstellung von Dokumentationen oder der Entwicklung von Testfällen eingesetzt werden. Dadurch besteht das Potenzial, bestimmte Aufgaben im Softwareentwicklungsprozess effizienter zu gestalten und Entwickler bei komplexen Tätigkeiten zu unterstützen.
+Gleichzeitig stehen viele Organisationen vor der Herausforderung, bestehende Softwaresysteme zu modernisieren. Insbesondere sogenannte Legacy-Systeme stellen häufig ein zentrales Problem dar, da sie über viele Jahre hinweg gewachsen sind und oft auf veralteten Technologien basieren. Zusätzlich fehlen in vielen Fällen aktuelle Dokumentationen oder eine klare Systemstruktur, was die Weiterentwicklung oder Migration solcher Systeme erheblich erschwert \cite{chen2021evaluatinglargelanguagemodels}.
+
+Vor diesem Hintergrund gewinnt das sogenannte Software-Re-Engineering zunehmend an Bedeutung. Ziel des Re-Engineering ist es, bestehende Systeme zu analysieren, zu verstehen und gegebenenfalls in eine modernere Architektur oder Implementierung zu überführen, ohne dabei die ursprünglichen funktionalen Anforderungen zu verändern.
+
+In diesem Zusammenhang stellt sich die Frage, inwieweit Large Language Models zur Unterstützung solcher Re-Engineering-Prozesse eingesetzt werden können. Aufgrund ihrer Fähigkeit, Code zu analysieren, natürliche Sprachbeschreibungen zu interpretieren und neue Implementierungen zu generieren, bieten LLMs das Potenzial, Teile der Systemmigration oder der Neuentwicklung bestehender Systeme zu automatisieren \cite{inproceedings}.
+
+Allerdings ist bislang nur begrenzt untersucht, in welchem Umfang LLM-basierte Ansätze tatsächlich in der Lage sind, bestehende Softwaresysteme unter Beibehaltung ihrer Anforderungen, Spezifikationen und Systemarchitekturen zuverlässig zu rekonstruieren oder neu zu implementieren. Insbesondere stellt sich die Frage, ob solche Modelle konsistente und funktional äquivalente Systeme erzeugen können.
+
+Vor diesem Hintergrund untersucht diese Arbeit, inwiefern Large Language Models zur Unterstützung des Re-Engineering bestehender Softwaresysteme eingesetzt werden können. Dabei wird analysiert, ob und in welchem Umfang LLMs dazu beitragen können, neue Systeme zu entwickeln, die die gleichen funktionalen Anforderungen und architektonischen Eigenschaften wie bestehende Systeme erfüllen.
+\section{Problemstellung}
+Viele Organisationen betreiben weiterhin sogenannte Legacy-Systeme, 
+die über viele Jahre hinweg entwickelt wurden und zentrale 
+Geschäftsprozesse unterstützen \cite{sommerville2016software}. 
+
+Die Modernisierung solcher Systeme stellt eine große Herausforderung 
+im Software Engineering dar, da Legacy-Systeme häufig komplexe 
+Abhängigkeiten und unzureichende Dokumentationen aufweisen 
+\cite{seacord2003modernizing}. 
+Ein möglicher Ansatz zur Modernisierung ist das sogenannte 
+Software-Re-Engineering, bei dem bestehende Systeme analysiert 
+und neu strukturiert werden, während ihre funktionalen 
+Anforderungen erhalten bleiben \cite{chikofsky1990reverse}. 
+
+Mit dem Aufkommen von Large Language Models eröffnen sich neue 
+Möglichkeiten zur Unterstützung solcher Prozesse, beispielsweise 
+durch automatisierte Codeanalyse oder Codegenerierung 
+\cite{fan2023largelanguagemodelssoftware}.
+
+\section{Zielsetzung der Arbeit}
+
+Ziel dieser Arbeit ist es, den Einsatz von Large Language Models (LLMs) im Kontext des Software-Re-Engineering systematisch zu untersuchen. 
+Dabei soll analysiert werden, inwieweit LLM-basierte Ansätze dazu beitragen können, bestehende Softwaresysteme neu zu implementieren oder zu modernisieren, während die ursprünglichen funktionalen Anforderungen und Spezifikationen erhalten bleiben.
+
+Aktuelle Studien zeigen, dass Large Language Models in der Lage 
+sind, Programmcode auf Grundlage natürlicher Sprachbeschreibungen 
+zu generieren \cite{fan2023largelanguagemodelssoftware}.
+
+Diese Fähigkeiten eröffnen neue Möglichkeiten für die Unterstützung von Softwareentwicklungsprozessen, insbesondere im Bereich der Codegenerierung und Systemrekonstruktion.
+
+Vor diesem Hintergrund untersucht diese Arbeit, inwieweit verschiedene Large Language Modells(LLMs) zur Unterstützung des Reengineering bestehender Systeme eingesetzt werden können und welche Stärken und Grenzen diese Modelle im Kontext der Modernisierung von Legacy-Systemen aufweisen.
+\section{Fragerstellung}
+Ausgehend von der beschriebenen Problemstellung ergibt sich 
+die zentrale Forschungsfrage dieser Arbeit:
+
+\textit{Inwieweit unterscheiden sich verschiedene Large Language 
+Models hinsichtlich ihrer Fähigkeit, Programmcode zu generieren, 
+der die funktionalen Anforderungen eines bestehenden Systems erfüllt?}
+
+Aktuelle Studien zeigen, dass Large Language Models in der Lage 
+sind, Programmcode auf Grundlage natürlicher Sprachbeschreibungen 
+zu generieren \cite{chen2021evaluatinglargelanguagemodels}. Darüber hinaus werden LLMs zunehmend 
+in verschiedenen Bereichen des Software Engineering eingesetzt, 
+beispielsweise zur Codegenerierung, Softwareanalyse oder 
+Dokumentation \cite{LLMinSEreviewandvision}
+
+Gleichzeitig spielt das sogenannte Prompt Engineering eine wichtige 
+Rolle bei der Steuerung der von LLMs generierten Ergebnisse, da die 
+Formulierung der Eingabeaufforderung einen erheblichen Einfluss auf 
+die Qualität der Modelloutputs haben kann \cite{reynolds2021promptprogramminglargelanguage}.
+
+Vor diesem Hintergrund untersucht diese Arbeit, wie sich die 
+Outputs verschiedener LLM-Modelle hinsichtlich ihrer Funktionalität 
+bei der Codegenerierung unterscheiden. Als Anwendungsfall dient die 
+Generierung eines webbasierten Buchungssystems.
+\section{Aufbau der Arbeit}
+Das muss ich später am ende wenn alle kapitals fertig jedes Kapital einzeln mit paar sätze beschreiben.
+Wie ist die Masterarbeit strukturiert und was wird in welchem Kapitel behandelt?
+Neben dieser Einleitung und der Zusammenfassung am Ende gliedert sich diese Arbeit in die folgenden drei Kapitel.
+\begin{description}
+  \item[\ref{chapter-basics}] beschreibt die für diese Arbeit benötigten Grundlagen. In diesem Kapitel werden \ldots, \ldots und \ldots eingeführt, da diese für die folgenden Kapitel dringend benötigt werden.
+  \item[\ref{chapter-konzept}] stellt das eigentliche Konzept vor. Dabei handelt es sich um ein Konzept zur Verbesserung der Welt. Das Kapitel gliedert sich daher in einen globalen und einen lokalen Ansatz, wie die Welt zum Besseren beeinflusst werden kann.
+  \item[\ref{chapter-evaluation}] beinhaltet eine Evaluation des Konzeptes aus dem vorherigen Kapitel. Anhand von Simulationen wird in diesem Kapitel untersucht, wie die Welt durch konkrete Maßnahmen deutlich verbessert werden kann.
+\end{description}
+

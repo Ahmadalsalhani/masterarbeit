@@ -1,0 +1,130 @@
+%!TEX root = thesis.tex
+
+\chapter{Evaluierung}
+\label{chapter-evaluation}
+
+In der Evaluierung wird das Ergebnis dieser Arbeit bewertet. Eine praktische Evaluation eines neuen Algorithmus kann zum Beispiel durch eine Implementierung geschehen. Je nach Thema der Arbeit kann sich natürlich auch die gesamte Arbeit eher im praktischen Bereich mit einer Implementierung beschäftigen. In diesem Fall gilt es am Ende der Arbeit insbesondere die Implementierung selber zu evaluieren. Wesentliche Fragen dabei können sein:
+\begin{compactitem}[--]
+  \item Was funktioniert jetzt besser als vor meiner Arbeit?
+  \item Wie kann das praktisch eingesetzt werden?
+  \item Was sagen potenzielle Anwender zu meiner Lösung?
+\end{compactitem}
+
+\section{Ergebnisse und Auswertung}
+In diesem Kapitel werden die Ergebnisse der durchgeführten
+Experimente dargestellt und analysiert. Ziel ist es,
+die durch verschiedene Large Language Models generierten
+Softwaresysteme systematisch zu vergleichen und im Hinblick
+auf die definierten Evaluationskriterien zu bewerten.
+
+Die Ergebnisse basieren auf insgesamt neun Experimenten,
+die sich aus der Kombination von drei Prompt-Varianten
+und drei unterschiedlichen LLM-Modellen ergeben.
+
+Im Folgenden werden zunächst die Ergebnisse der einzelnen
+Experimente vorgestellt. Anschließend erfolgt ein
+vergleichender Überblick sowie eine Diskussion der
+gewonnenen Erkenntnisse.
+
+\section{Ergebnisse der einzelnen Experimente}
+\subsection{Experiment 1: Prompt 1 mit GPT-5.2}
+
+Das generierte System basiert auf dem Django-Framework
+und folgt grundsätzlich der Model-View-Template-Architektur.
+
+Die grundlegenden Funktionen, wie die Verwaltung von
+Kundendaten und Buchungen, wurden umgesetzt. Allerdings
+zeigten sich Einschränkungen bei der Umsetzung komplexerer
+Anforderungen.
+
+Die Codequalität ist insgesamt als mittelmäßig zu bewerten,
+da zwar eine grundlegende Struktur vorhanden ist, jedoch
+Inkonsistenzen in der Implementierung auftreten.
+
+Die Benutzeroberfläche ist funktional, jedoch einfach
+gehalten und weist nur eine begrenzte Benutzerfreundlichkeit
+auf.
+
+\subsection{Experiment 1: GPT-5.2 mit Basis-Prompt}
+
+Im ersten Experiment wurde das Buchungssystem
+mithilfe des Modells GPT-5.2 generiert. Das resultierende
+System wurde als vollständige Django-Webanwendung
+implementiert und anschließend hinsichtlich der definierten
+Evaluationskriterien analysiert.
+
+\textbf{Funktionalität und Vollständigkeit:}
+Die Analyse zeigt, dass das generierte System sämtliche
+zentralen Anforderungen des ursprünglichen Legacy-Systems
+umsetzt. Dazu zählen insbesondere die Verwaltung von
+Kundendaten, die Buchungsverwaltung, die
+Rechnungserstellung sowie eine Kalenderübersicht.
+Die vollständige Umsetzung der Spezifikation wird auch
+durch die vorhandene Dokumentation bestätigt.
+
+\textbf{Architektur:}
+Das System folgt konsequent der Model-View-Template-
+Architektur des Django-Frameworks. Die klare Trennung
+zwischen Datenmodellen, Logik und Präsentationsschicht
+weist auf eine korrekte Umsetzung grundlegender
+Architekturprinzipien hin.
+
+\textbf{Codequalität:}
+Die generierte Codebasis ist strukturiert und modular
+aufgebaut. Die Verwendung mehrerer Komponenten, wie
+Models, Views und Templates, ermöglicht eine gute
+Nachvollziehbarkeit und Erweiterbarkeit des Systems.
+Dennoch sind kleinere Optimierungspotenziale im Hinblick
+auf Code-Konsistenz und Best Practices erkennbar.
+
+\textbf{Benutzeroberfläche:}
+Die grafische Benutzeroberfläche basiert auf Bootstrap
+und bietet eine übersichtliche und funktionale
+Interaktion. Das Dashboard sowie die Formularstrukturen
+ermöglichen eine intuitive Nutzung, auch wenn die
+Gestaltung eher funktional als innovativ ist.
+
+\textbf{Performance und Skalierbarkeit:}
+Das System verwendet standardmäßig eine SQLite-Datenbank,
+was für Entwicklungszwecke ausreichend ist, jedoch
+Einschränkungen hinsichtlich Skalierbarkeit und
+Performance aufweist.
+
+\textbf{Sicherheit und Wartbarkeit:}
+Grundlegende Sicherheitsmechanismen, wie Login-Schutz
+und CSRF-Schutz, sind implementiert. Die modulare
+Struktur des Systems unterstützt zudem die Wartbarkeit
+und zukünftige Erweiterungen.
+
+\textbf{Zusammenfassung der Bewertung:}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+\hline
+\textbf{Kriterium} & \textbf{Score (0–5)} \\
+\hline
+Funktionalität & 5 \\
+Vollständigkeit & 5 \\
+Codequalität & 4 \\
+Architektur & 5 \\
+Benutzeroberfläche & 4 \\
+Performance & 3 \\
+Sicherheit & 4 \\
+Wartbarkeit & 4 \\
+\hline
+\end{tabular}
+\caption{Bewertung von Experiment 1 (GPT-5.2)}
+\end{table}
+
+Insgesamt zeigt das erste Experiment, dass GPT-5.2 in
+der Lage ist, ein nahezu vollständig funktionsfähiges
+Softwaresystem zu generieren. Die Qualität der Ergebnisse
+ist insbesondere im Bereich der Funktionalität und
+Architektur sehr hoch, während kleinere Einschränkungen
+in den Bereichen Performance und Codeoptimierung bestehen.
+
+\section{Implementierungen}
+
+Wenn Implementierungen umfangreich beschrieben werden, ist darauf zu achten, den richtigen Mittelweg zwischen einer zu detaillierten und zu oberflächlichen Beschreibung zu finden. Eine Beschreibung aller Details der Implementierung ist in der Regel zu detailliert, da die primäre Zielgruppe einer Abschlussarbeit sich nicht im Detail in den geschriebenen Quelltext einarbeiten will. Die Beschreibung sollte aber durchaus alle wesentlichen Konzepte der Implementierung enthalten. Gerade bei einer Abschlussarbeit am Institut für Softwaretechnik und Programmiersprachen lohnt es sich, auf die eingesetzten Techniken und Programmiersprachen einzugehen. Ich würde in einer solchen Beschreibung auch einige unterstützende Diagramme erwarten.
+

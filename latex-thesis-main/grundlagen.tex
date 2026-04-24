@@ -1,0 +1,272 @@
+%!TEX root = thesis.tex
+
+\chapter{Theoretische Grundlagen}
+\label{chapter-basics}
+
+Dieses Kapitel beschreibt alle für die Arbeit notwendigen Grundlagen.
+
+\section{Large Language Models (LLMs)}
+
+Large Language Models werden auf großen Textkorpora
+trainiert, um sprachliche Muster zu modellieren und
+darauf basierend Textsequenzen zu generieren.
+
+Dabei basiert ihre Funktionsweise hauptsächlich auf der
+probabilistischen Vorhersage des nächsten Tokens
+innerhalb eines gegebenen Kontextes \cite{seemann2023ki}.
+
+Solche Modelle werden in der Regel mit einer sehr
+großen Anzahl von Parametern implementiert.
+
+Diese liegen häufig im Bereich von Millionen bis hin zu
+Milliarden.
+
+Die zugrunde liegende Architektur basiert dabei meist
+auf sogenannten Transformer-Blöcken.
+
+Das Training erfolgt typischerweise zunächst durch ein
+selbstüberwachtes Vortraining auf großen Textkorpora.
+
+Darauf folgen weitere Feinabstimmungs- oder
+Ausrichtungsprozesse, um das Modell für spezifische
+Aufgaben oder Anwendungen zu optimieren
+\cite{zhang2023survey}.
+
+\section{LLMs in der Softwareentwicklung}
+
+LLMs unterstützen die Softwareentwicklung in
+verschiedenen Bereichen.
+
+Dazu zählen unter anderem Codegenerierung,
+Softwaredesign, Anforderungsanalyse,
+Fehlerbehebung und -erkennung, Refactoring,
+Leistungsoptimierung, Dokumentation sowie
+Softwareanalyse.
+
+Dabei eröffnen sie neue Möglichkeiten für
+Automatisierung, Kreativität und Effizienzsteigerung
+\cite{LLMinSEreviewandvision}.
+
+Die Nutzung von LLMs in der Softwareentwicklung ist in
+den letzten Jahren stark gewachsen.
+
+Dennoch bestehen weiterhin zahlreiche
+Herausforderungen.
+
+Dazu gehören insbesondere Qualität, Verlässlichkeit,
+Generalisierung und Bewertung der generierten
+Ergebnisse.
+
+Diese Aspekte stellen wichtige Themen für zukünftige
+Forschung dar \cite{LLMinSEreviewandvision}.
+
+\section{Prompt-Engineering}
+
+Prompt Engineering bezeichnet die gezielte Gestaltung
+von Eingaben (Prompts), um das Modell so zu steuern,
+dass es möglichst präzise und qualitativ hochwertige
+Ergebnisse erzeugt.
+
+Ziel ist es, durch geeignete Formulierungen die
+Wahrscheinlichkeit der gewünschten Token-Abfolge zu
+erhöhen.
+
+Gut entwickelte Prompts ermöglichen die Bearbeitung
+verschiedener Aufgaben.
+
+Dazu gehören unter anderem Frage-Antwort-Systeme,
+Textklassifikation, Sprach- oder Code-Übersetzung,
+Codegenerierung, Dokumentation sowie logisches
+Schlussfolgern.
+
+Da unterschiedliche Modelle unterschiedlich auf
+Prompts reagieren können, müssen diese häufig
+modellspezifisch angepasst und optimiert werden.
+
+Neben der Formulierung spielt auch die Modellkonfiguration
+eine wichtige Rolle bei der Steuerung der Ausgabe.
+Beispielsweise kann die Einstellung der Temperatur
+die Ausgabe beeinflussen \cite{boonstra2024prompt}.
+
+\section{Vibe Coding als ergänzender Ansatz}
+
+Im Rahmen dieser Arbeit wurde neben dem strukturierten
+Prompt Engineering auch ein explorativer Ansatz
+untersucht, der als ``Vibe Coding'' bezeichnet wird.
+
+Dabei handelt es sich um ein iteratives Vorgehen, bei
+dem Code schrittweise durch Interaktion mit dem Modell
+entwickelt und verbessert wird \cite{ray2024vibecoding}.
+
+In den durchgeführten Experimenten wurde der generierte
+Code zunächst grob erstellt und anschließend durch
+wiederholtes Nachprompten verfeinert.
+
+Fehler wurden dabei schrittweise identifiziert und
+korrigiert, während neue Funktionalitäten iterativ
+hinzugefügt wurden.
+
+Nach der Implementierung einzelner Features wurde das
+Modell zusätzlich dazu aufgefordert, entsprechende
+Tests zu generieren und diese auszuführen.
+
+Im Vergleich zum strukturierten Prompt Engineering
+zeichnet sich Vibe Coding durch eine geringere
+Anfangsspezifikation aus.
+
+Statt einer detaillierten Planung erfolgt die
+Entwicklung schrittweise durch Feedback und Anpassungen.
+
+Dieses Vorgehen ermöglicht eine schnelle
+Prototypenentwicklung und fördert kreative
+Lösungsansätze.
+
+Gleichzeitig zeigte sich jedoch, dass dieser Ansatz zu
+inkonsistenten Ergebnissen führen kann, wenn keine
+systematische Strukturierung erfolgt.
+
+Zudem erfordert die iterative Korrektur einzelner
+Fehler einen erhöhten manuellen Aufwand.
+
+Zusammenfassend kann Vibe Coding als ergänzender Ansatz
+zum strukturierten Prompt Engineering betrachtet
+werden.
+
+
+\section{KI-gestützte Migration und Re-Engineering}
+
+KI-gestützte Migration und Re-Engineering bezeichnet
+den Einsatz von Methoden der Künstlichen Intelligenz
+zur Analyse, Transformation und Modernisierung
+bestehender Softwaresysteme.
+
+Ziel ist es, die Funktionalität eines Legacy-Systems
+zu erhalten, während dessen Implementierung oder
+technische Plattform modernisiert wird.
+
+In den letzten Jahren haben Large Language Models
+(LLMs) zunehmend an Bedeutung für die Migration und
+Modernisierung von Legacy-Systemen gewonnen.
+
+Dies liegt insbesondere an ihrer Geschwindigkeit,
+ihrem Potenzial zum Wissenserhalt und der
+Verbesserung der Codequalität \cite{agarwal2024legacy}.
+
+Gleichzeitig entstehen dabei auch Herausforderungen
+und Risiken.
+
+Dazu zählen insbesondere Probleme bei der semantischen
+Korrektheit durch Halluzinationen sowie mögliche
+Sicherheitsrisiken \cite{chen2021evaluatinglargelanguagemodels}.
+
+\section{Anforderungsanalyse und Systemarchitektur}
+
+Die Anforderungsanalyse stellt einen zentralen
+Bestandteil des Softwareentwicklungsprozesses dar.
+
+Sie dient der systematischen Erfassung und
+Dokumentation der Anforderungen an ein
+Softwaresystem.
+
+Ziel dieses Prozesses ist es, die Erwartungen der
+Stakeholder zu identifizieren und in präzise,
+nachvollziehbare und überprüfbare Spezifikationen zu
+überführen.
+
+Eine klare Definition der Anforderungen bildet die
+Grundlage für die spätere Systementwicklung sowie für
+die Bewertung eines Systems.
+
+Grundsätzlich werden Anforderungen in funktionale und
+nicht-funktionale Anforderungen unterteilt.
+
+Funktionale Anforderungen beschreiben die konkreten
+Funktionen und Dienstleistungen, die ein System
+bereitstellen muss.
+
+Dazu gehören beispielsweise Prozesse zur
+Benutzerregistrierung, Datenverarbeitung oder
+Buchungsfunktionen.
+
+Nicht-funktionale Anforderungen beschreiben hingegen
+qualitative Eigenschaften des Systems.
+
+Dazu zählen beispielsweise Performance, Sicherheit,
+Skalierbarkeit, Zuverlässigkeit oder Wartbarkeit
+\cite{leucker2024anforderungen}.
+
+Neben den Anforderungen spielt die Systemarchitektur
+eine entscheidende Rolle.
+
+Sie beschreibt die grundlegende Struktur eines Systems
+sowie die Beziehungen und Interaktionen zwischen den
+einzelnen Komponenten.
+
+Die Spezifikation und Dokumentation erfolgt häufig in
+Form strukturierter Dokumente wie Software
+Requirements Specifications (SRS) oder
+Architekturdiagrammen.
+
+Diese dienen als Referenz für Entwicklung, Wartung und
+Migration eines Systems.
+
+Im Kontext der Migration oder Neuentwicklung ist die
+Erhaltung bestehender Anforderungen und
+Architekturprinzipien von besonderer Bedeutung.
+
+Dazu müssen funktionale und nicht-funktionale
+Anforderungen sowie strukturelle Eigenschaften
+analysiert und mit der neuen Implementierung
+verglichen werden.
+
+\section{Stand der Forschung}
+
+In den letzten Jahren hat die Forschung zunehmend den
+Einsatz von Large Language Models in der
+Softwareentwicklung untersucht.
+
+Moderne Modelle zeigen, dass sie verschiedene Aufgaben
+des Software Engineering automatisieren können.
+
+Dazu gehören unter anderem Codegenerierung,
+Codeanalyse, Dokumentation und Fehlerbehebung.
+
+Aktuelle Studien zeigen, dass LLMs in mehreren Phasen
+des Softwareentwicklungsprozesses eingesetzt werden
+können.
+
+Beispiele sind die Implementierung von Funktionen, die
+Generierung von Tests sowie die Unterstützung bei
+Refactoring-Prozessen \cite{LLM4SE}.
+
+Eine umfassende Übersicht liefern Fan et al., die den
+Einsatz von LLMs im Software Engineering systematisch
+analysieren.
+
+Die Autoren zeigen, dass moderne Sprachmodelle in
+Bereichen wie Softwaredesign, Codegenerierung,
+Programmanalyse und Wartung eingesetzt werden.
+
+Gleichzeitig werden Herausforderungen identifiziert.
+
+Dazu gehören insbesondere die Zuverlässigkeit,
+Konsistenz sowie das Problem der Halluzinationen
+\cite{LLM4SE2}.
+
+Eine weitere Studie analysiert 395 wissenschaftliche
+Arbeiten zu diesem Thema.
+
+Dabei wird gezeigt, dass LLMs bereits in vielen
+Bereichen eingesetzt werden.
+
+Gleichzeitig bestehen weiterhin Forschungslücken,
+insbesondere in den Bereichen Evaluation,
+Sicherheit und Integration in reale Prozesse
+\cite{hou2024largelanguagemodelssoftware}.
+
+Diese Ergebnisse zeigen, dass Large Language Models ein
+großes Potenzial besitzen.
+
+Dennoch bleibt offen, inwieweit sie zuverlässig für
+die Analyse bestehender Systeme und die Generierung
+neuer Systeme eingesetzt werden können.
