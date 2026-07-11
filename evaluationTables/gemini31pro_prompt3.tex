@@ -1,0 +1,52 @@
+\newpage
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Ergebnisse von Gemini 3.1 Pro mit Strukturiertem Prompt und Rollendefinition}
+\label{tab: Gemini 3.1_strukturierter_prompt mit_rollendefinition}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 1 &
+Grundlegende Benutzeroberfläche vorhanden. Formulare und Authentifizierung sind nicht implementiert. Erweiterte Funktionen wie Filterung, Pagination sowie vollständige CRUD-Operationen fehlen. \\
+Geschäftsobjekte und CRUD-Funktionalität & 1 &
+\textit{Customers, Orders, Rooms, Tasks und Invoices} wurden teilweise umgesetzt. Mehrere Module besitzen jedoch keine vollständige CRUD-Funktionalität. \\
+Erweiterte Domänenfunktionen & 0 &
+\textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}} wurden nicht implementiert. \\
+Benutzer- und Rechteverwaltung & 1 &
+Benutzer- und Rollenmodelle sind teilweise vorhanden, jedoch fehlt eine vollständige Rechteverwaltung und Autorisierung. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 0 &
+Model-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechanismen wurden nicht umgesetzt. \\
+Unit-Tests & 0 &
+Es wurden keine automatisierten Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 1 &
+Die technische Struktur von Django Projekt inklusiv bookings Anwendung sind vorhanden, enthält jedoch keine nachweisbaren Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 1 &
+Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind teilweise vorhanden. Komplexe Workflows wurden jedoch nicht vollständig umgesetzt. \\
+End-to-End-Workflows & 0 &
+keine vollständige Benutzerabläufe oder automatisierten Integrationstests vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 5 / 18 &
+Das generierte System erreicht 5 von 18 möglichen Bewertungspunkten und erfüllt damit etwa 27,8\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+Die Ergebnisse zeigen \ref{tab: Gemini 3.1_strukturierter_prompt mit_rollendefinition}, dass die zusätzliche Rollendefinition nur einen begrenzten Einfluss auf die Qualität der generierten Anwendung hatte. Zwar wurden grundlegende Komponenten wie Benutzeroberfläche, Formulare, Authentifizierung sowie zentrale Geschäftsobjekte teilweise umgesetzt, jedoch konnten zahlreiche funktionale Anforderungen nicht vollständig erfüllt werden.
+Auch im Bereich der Benutzer- und Rechteverwaltung wurden lediglich grundlegende Strukturen generiert. Obwohl Benutzer- und Rollenmodelle vorhanden sind, fehlt eine umfassende Autorisierung und Rechteverwaltung. Dadurch eignet sich die generierte Anwendung nur eingeschränkt für den produktiven Einsatz.
+Die technische Qualität der Lösung bleibt ebenfalls begrenzt. Model-Validierungen und Geschäftsregeln wurden nur teilweise umgesetzt, wodurch wichtige fachliche Anforderungen nicht zuverlässig abgesichert werden. Darüber hinaus wurden keine automatisierten Unit-Tests generiert. Auch hinsichtlich der Codequalität konnten keine wesentlichen Mechanismen zur Qualitätssicherung oder Verbesserung der Wartbarkeit festgestellt werden.
+Im Bereich der Integration wurden lediglich grundlegende Verbindungen zwischen Frontend und Backend realisiert. Vollständige End-to-End-Workflows sowie automatisierte Integrationstests fehlen vollständig. 
+Insgesamt erreicht die von Gemini 3.1 Pro generierte Lösung 5 von 18 möglichen Bewertungspunkten und damit einen Erfüllungsgrad von 27,8\%. Die Ergebnisse verdeutlichen, dass die Ergänzung einer Rollendefinition allein bei diesem Modell nicht ausreicht, um eine qualitativ hochwertige und produktionsreife Softwarelösung zu erzeugen. Das Experiment bestätigt, dass strukturierte Prompts und Rollendefinitionen zwar die Generierung fachlicher Strukturen unterstützen können, jedoch ohne zusätzliche Verfeinerung, iterative Tests und die gezielte Berücksichtigung von Software-Engineering-Praktiken keine signifikante Verbesserung der Softwarequalität erreicht wird. Für das entwickelte Buchungssystem sind insbesondere zusätzliche Maßnahmen zur Umsetzung von Validierungsmechanismen, Geschäftslogik, Testbarkeit erforderlich, um die Anforderungen an ein professionelles Softwaresystem zu erfüllen.

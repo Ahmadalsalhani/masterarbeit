@@ -1,0 +1,54 @@
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Ergebnisse von GPT-5.2 mit strukturiertem Prompt und Rollendefinition}
+\label{tab:gpt5.2_Rolle_prompt_evaluation}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 2 &
+Grundlegende Benutzeroberfläche, Formulare und Authentifizierung vorhanden. Erweiterte Funktionen wie Filterung, Pagination sowie vollständige CRUD-Operationen sind implementiert. \\
+Geschäftsobjekte und CRUD-Funktionalität & 2 &
+\textit{Customers, Orders, Rooms, Tasks und Invoices} wurden umgesetzt. Mehrere Module besitzen eine vollständige CRUD-Funktionalität. \\
+Erweiterte Domänenfunktionen & 2 &
+\textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}} wurden vollständig implementiert. \\
+Benutzer- und Rechteverwaltung & 1 &
+Benutzer- und Rollenmodelle sind vorhanden, jedoch fehlt eine vollständige Rechteverwaltung und Autorisierung. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 0 &
+Model-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechanismen wurden nicht ausreichend umgesetzt. \\
+Unit-Tests & 0 &
+Es wurden keine automatisierten Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 0 &
+Die technische Struktur enthält keine nachweisbaren Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 2 &
+Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind vorhanden. Komplexe Workflows wurden vollständig umgesetzt. \\
+End-to-End-Workflows & 0 &
+Keine vollständigen Benutzerabläufe oder automatisierten Integrationstests vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 9 / 18 &
+Das generierte System erreicht neun von 18 möglichen Bewertungspunkten und erfüllt damit etwa 50,0\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Die Ergebnisse \ref{tab:gpt5.2_Rolle_prompt_evaluation} zeigen eine weitere Verbesserung gegenüber den vorherigen Experimenten. Insbesondere die fachliche Vollständigkeit, die Strukturierung des Codes sowie die Umsetzung technischer Anforderungen wurden verbessert. Dennoch konnten nicht alle Evaluationskriterien vollständig erfüllt werden.
+
+Die Resultate legen nahe, dass Role Prompting einen positiven Einfluss auf die Qualität der generierten Software hat und gegenüber einfacheren Prompt-Strategien zu konsistenteren Ergebnissen führt. Besonders auffällig war die verbesserte Umsetzung der Domänenobjekte und REST-Schnittstellen. Während im ersten Experiment mehrere Komponenten nur teilweise oder gar nicht implementiert wurden, konnten im zweiten Experiment nahezu alle zentralen Geschäftsobjekte einschließlich ihrer CRUD-Funktionalitäten generiert werden. Zusätzlich wurden weitere Module wie Services, Kommentare, Occupancy Items und Room Locations erfolgreich umgesetzt.
+Die stärkere Strukturierung des Prompts führte außerdem zu einer besseren Kohärenz zwischen den einzelnen Komponenten des Systems. Die Anzahl unvollständiger oder widersprüchlicher Implementierungen wurde deutlich reduziert, da der strukturierte Prompt dem Modell einen klar definierten Kontext sowie präzisere Zielvorgaben bereitstellte.
+
+Trotz der erkennbaren Verbesserungen bestehen weiterhin Einschränkungen hinsichtlich der technischen Qualitätssicherung. Insbesondere wurden keine automatisierten Unit- oder Integrationstests erstellt. Die Ergebnisse verdeutlichen somit, dass ein strukturierter Prompt mit Rollendefinition die funktionale Vollständigkeit und Konsistenz eines KI-generierten Softwaresystems erheblich verbessern kann, jedoch nicht automatisch zu einer umfassenden technischen Absicherung der Anwendung führt.
+

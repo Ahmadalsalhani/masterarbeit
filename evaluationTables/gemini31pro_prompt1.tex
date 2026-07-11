@@ -1,0 +1,63 @@
+\subsection{Gemini 3.1 Pro mit Basis Prompt}
+Die Ergebnisse des ersten Experiments \ref{tab:Gemini_3_1_Basis_Prompt} zeigen, dass Gemini 3.1 Pro bereits mit einem einfachen Basis-Prompt eine funktionsfähige Django-Anwendung generieren kann. Das Modell implementierte die wesentlichen Geschäftsobjekte des Hotelmanagementsystems sowie eine vollständige CRUD-Funktionalität über das integrierte Django-Admin-Interface. Darüber hinaus wurden Funktionen wie Authentifizierung, Formulare, Suchfunktionen, Filtermöglichkeiten und Pagination automatisch bereitgestellt, wodurch die allgemeinen funktionalen Anforderungen weitgehend erfüllt werden konnten.
+
+Im Bereich der Domänenlogik wurden grundlegende fachliche Funktionen umgesetzt. Dazu zählen insbesondere die automatische Berechnung von Buchungspreisen auf Basis der Aufenthaltsdauer sowie die Verwaltung verschiedener Buchungsstatus. Erweiterte Anforderungen wie die Verwaltung zusätzlicher Dienstleistungen, Order Items oder weiterführende Geschäftsprozesse wurden hingegen nicht implementiert. Auch die Benutzer- und Rechteverwaltung beschränkt sich auf die standardmäßigen Authentifizierungsmechanismen von Django, sodass keine differenzierte rollenbasierte Zugriffskontrolle vorhanden ist.
+
+Die technische Umsetzung weist eine strukturierte Projektorganisation und die Nutzung etablierter Django-"Best-Practices" auf. Die Geschäftslogik wurde teilweise in den Modellen implementiert, und grundlegende Validierungsmechanismen des Django ORM (Object Relational Mapper) werden verwendet. Allerdings fehlen automatisierte Unit-Tests sowie weitergehende Maßnahmen zur Sicherstellung der Softwarequalität, wodurch die technische Reife der generierten Anwendung eingeschränkt bleibt.
+
+Hinsichtlich der Integration konnte eine vollständige Verbindung zwischen Benutzeroberfläche und Backend festgestellt werden, da sämtliche Geschäftsobjekte über das Django-Admin-Interface verwaltet werden können. Allerdings wurden keine End-to-End-Workflows oder Integrationstests generiert, sodass die Funktionsfähigkeit vollständiger Geschäftsprozesse nicht nachgewiesen werden kann.
+
+Im Bereich der Performance und Skalierbarkeit zeigt die generierte Anwendung deutliche Defizite. Weder Performance-Messungen noch Optimierungsmaßnahmen wurden implementiert. Zudem basiert die Anwendung auf einer SQLite-Datenbank und enthält keine Mechanismen zur Lastverteilung, Zwischenspeicherung oder Skalierung.
+
+Gemini 3.1 Pro zeigte einen anderen Schwerpunkt. Das Modell implementierte die Backend-Komponenten, einschließlich der Geschäftslogik und der Controller, weitgehend vollständig. Die entsprechenden Funktionen wurden jedoch im Frontend nur teilweise integriert. Dadurch waren zahlreiche implementierte Funktionalitäten über die Benutzeroberfläche nicht oder nur eingeschränkt zugänglich. Zudem fiel die Gestaltung der Benutzeroberfläche im Vergleich zu GPT 5.2 einfacher aus.
+
+Insgesamt erreicht die von Gemini 3.1 Pro generierte Lösung mit Basis-Prompt neun von 18 möglichen Bewertungspunkten, was einem Erfüllungsgrad von etwa 50 Prozent entspricht \ref{tab:Gemini_3_1_Basis_Prompt}.
+
+Zusammenfassend zeigt das erste Experiment, dass Gemini 3.1 Pro bereits mit einem einfachen Basis-Prompt in der Lage ist, eine funktionierende Grundanwendung auf Basis des Django-Frameworks zu generieren. Die Ergebnisse verdeutlichen jedoch auch, dass ohne zusätzliche Kontextinformationen und detaillierte Anweisungen, insbesondere komplexere fachliche Anforderungen, erweiterte Sicherheitsmechanismen sowie Qualitätsaspekte nur unzureichend berücksichtigt werden.
+
+\newpage
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Ergebnisse von Gemini 3.1 Pro mit Basis-Prompt}
+\label{tab:Gemini_3_1_Basis_Prompt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 2 &
+Django Admin-Interface mit vollständiger Benutzeroberfläche, Authentifizierung, Formulare, Filterung, Suchfunktionen, Pagination und dynamische Datahierarchie. \\
+Geschäftsobjekte und CRUD-Funktionalität & 1 &
+Alle Kernmodelle vollständig mit Create-Read-Update-Delete-Operationen im Admin-Interface umgesetzt. \\
+Erweiterte Domänenfunktionen & 1 &
+Automatische Preisberechnung basierend auf Übernachtungsdauer, Statusverfolgung von Buchungen teilweise vorhanden. Order Items, Services und weitere erweiterte Funktionen teilweise implementiert. \\
+Benutzer- und Rechteverwaltung & 1 &
+Django's Built-in-Authentifizierungssystem integriert. Explizite rollenbasierte Zugriffskontrolle und detaillierte Autorisierung nicht implementiert. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 1 &
+Modell-Validierungen durch Django ORM. Geschäftslogik in Booking-Methode für automatische Preisberechnung implementiert. Weitere Modell-Validierungen nur teilweise vorhanden. \\
+Unit-Tests & 0 &
+Es wurden keine automatisierten Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 1 &
+Saubere Codestruktur mit klarer Separation of Concerns. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 2 &
+Django Admin-Interface ist vollständig mit dem Backend integriert. Alle Modelle sind registriert, alle CRUD-Operationen sind über die interaktive Oberfläche nutzbar. \\
+End-to-End-Workflows & 0 &
+Keine vollständigen Benutzerabläufe oder automatisierten Integrationstests vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 9 / 18 &
+Das generierte System erreicht neun von 18 möglichen Bewertungspunkten und erfüllt damit etwa 50,0\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+

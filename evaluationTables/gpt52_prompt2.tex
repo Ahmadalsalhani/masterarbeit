@@ -1,0 +1,105 @@
+\subsection{GPT-5.2 mit strukturiertem Prompt und Rollendefinition}
+Das zweite Experiment wurde unter Verwendung eines strukturierten und detailliert definierten Prompts durchgeführt.
+Insgesamt erreichte GPT-5.2 mit dem strukturiertem Prompt sieben von 18 möglichen Bewertungspunkten (\ref{tab:gptV2}).
+Der verwendete Prompt enthielt detaillierte
+Vorgaben hinsichtlich der Systemarchitektur, der funktionalen Anforderungen, 
+der technischen Rahmenbedingungen sowie der erwarteten Qualitätsmerkmale der Anwendung.
+
+Im Gegensatz zum Basis-Prompt wurden die Anforderungen nicht lediglich allge
+mein beschrieben, sondern in einer klar strukturierten Form spezifiziert.
+Dadurch erhielt das Modell zusätzliche Kontextinformationen über die zu implementierenden
+Komponenten, deren Beziehungen sowie die erwartete Systemfunktionalität.
+
+Die \ref{tab:gptV2} stellt die Ergebnisse der Evaluation dar.
+\subsection{GPT-5.2 mit strukturiertem Prompt und Rollendefinition}
+
+Im dritten Experiment wurde GPT-5.2 mittels Role Prompting angewiesen, die Rolle eines erfahrenen Softwarearchitekten und Full-Stack-Entwicklers einzunehmen. Es sollte untersucht werden, ob die explizite Rollendefinition die Qualität und Vollständigkeit der generierten Lösung weiter verbessert wird.
+
+Die \ref{tab:gpt5.2_Rolle_prompt_evaluation} zeigt die Ergebnisse der Evaluation.
+
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Ergebnisse von GPT-5.2 mit strukturiertem Prompt} 
+
+\label{tab:gptV2}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 1 &
+Grundlegende Benutzeroberfläche, Formulare und Authentifizierung vorhanden. Erweiterte Funktionen wie Filterung, Pagination sowie vollständige CRUD-Operationen fehlen teilweise. \\
+Geschäftsobjekte und CRUD-Funktionalität & 2 &
+\textit{Customers, Orders, Rooms, Tasks und Invoices} wurden teilweise umgesetzt. Mehrere Module besitzen jedoch keine vollständige CRUD-Funktionalität. \\
+Erweiterte Domänenfunktionen & 1 &
+\textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}} wurden nicht vollständig implementiert. \\
+Benutzer- und Rechteverwaltung & 0 &
+User/Group/Permission-Endpoints vorhanden, Rollenrechte müssen konfiguriert werden.. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 1 &
+Model-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechanismen wurden nicht ausreichend umgesetzt. \\
+Unit-Tests & 0 &
+Es wurden keine automatisierten Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 1 &
+Strukturierte Apps und Serializers, jedoch keine Tests oder Qualitätssicherung. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 1 &
+Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind vorhanden. Komplexe Workflows wurden jedoch nicht vollständig umgesetzt. \\
+End-to-End-Workflows & 0 &
+Keine vollständigen Benutzerabläufe oder automatisierten End-to-End-Tests vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 7 / 18 &
+Das generierte System erreicht sieben von 18 möglichen Bewertungspunkten und erfüllt damit etwa 38,9\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\newpage
+Im Vergleich zum Basis-Prompt zeigt sich eine Verbesserung in mehreren Evaluationskriterien.
+Insbesondere die Umsetzung funktionaler Anforderungen und
+die Strukturierung der generierten Anwendung wurden verbessert.
+Dennoch bestehen weiterhin Defizite bei automatisierten Tests, Integrationsmechanismen und Performance-Aspekten.
+Die Ergebnisse deuten darauf hin, dass zusätzliche Kontextinformationen die Fähigkeit des Modells zur Generierung komplexerer Softwarestrukturen positiv beeinflussen.
+
+Zusätzlich wurden weitere Module wie Services, Kommentare, Occupancy
+Items und Room Locations erfolgreich umgesetzt.
+Die stärkere Strukturierung des Prompts führte außerdem zu einer besseren Kohärenz
+zwischen den einzelnen Komponenten des Systems. Die Anzahl unvollständiger
+oder widersprüchlicher Implementierungen wurde deutlich reduziert, da der strukturierte
+Prompt dem Modell einen klar definierten Kontext sowie präzisere Zielvorgaben bereitstellte.
+Trotz der erkennbaren Verbesserungen bestehen weiterhin Einschränkungen hinsichtlich der technischen Qualitätssicherung. 
+Insbesondere wurden keine automatisierten Unit-Tests, Integrations- oder Performance-Tests generiert.
+Die Ergebnisse verdeutlichen somit, dass ein strukturierter Prompt die funktionale Vollständigkeit
+und Konsistenz eines KI-generierten Softwaresystems erheblich verbessern kann,
+jedoch nicht automatisch zu einer umfassenden technischen Absicherung der Anwendung führt.
+Im Vergleich zum ersten Experiment zeigt sich eine deutliche Qualitätssteigerung.
+Dennoch bestehen weiterhin Defizite in den technischen- und Integrations- Kriterien. Insbesondere fehlen automatisierte Unit-Tests, End-to-
+End-Tests.
+
+Darüber hinaus zeigte die generierte Anwendung eine konsistentere Systemstruktur
+sowie eine höhere Übereinstimmung mit den vorgegebenen Anforderungen.
+Besonders auffällig war die verbesserte Umsetzung der Domänenobjekte und REST-
+Schnittstellen. Während im ersten Experiment mehrere Komponenten nur teilweise
+oder gar nicht implementiert wurden, konnten im zweiten Experiment nahezu al-
+le zentralen Geschäftsobjekte einschließlich ihrer CRUD-Funktionalitäten generiert
+werden.
+
+Die Ergebnisse \ref{tab:gptV2} verdeutlichen somit,dass ein strukturierter Prompt die funktionale Vollständigkeit eines KI-generierten
+Softwaresystems erheblich verbessern kann, jedoch nicht automatisch zu einer umfassenden technischen Qualitätssicherung führt.
+
+Insgesamt zeigen die Ergebnisse \ref{tab:gptV2}, dass die präzisere Formulierung des Prompts zu einer deutlichen
+Verbesserung der generierten Software führte. Insbesondere die funktionalen
+Anforderungen wurden wesentlich vollständiger umgesetzt als im ersten Experiment.

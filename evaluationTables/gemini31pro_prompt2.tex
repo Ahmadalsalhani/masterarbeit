@@ -1,0 +1,55 @@
+\subsection{Gemini 3.1 Pro mit strukturiertem-Prompt}
+Die im ersten Experiment identifizierten Defizite bilden die Grundlage für das zweite Experiment, in dem durch einen strukturierten Prompt zusätzliche Anforderungen und Kontextinformationen bereitgestellt werden.
+
+Die Ergebnisse des zweiten Experiments mit Gemini 3.1 Pro unter Verwendung eines strukturierten Prompts sind in \vref{tab:Gemini 3.1 Pro_strukturierter_prompt} dargestellt. Im Vergleich zum ersten Experiment zeigt das Modell keine Leistungssteigerung. Zwar wurden grundlegende Komponenten wie eine Benutzeroberfläche, Formulare, Authentifizierung sowie teilweise Modell-Validierungen und Geschäftslogik generiert, jedoch blieben wesentliche funktionale Anforderungen unvollständig. Insbesondere wurden zentrale Geschäftsobjekte und deren vollständige CRUD-Funktionalitäten sowie erweiterte Domänenfunktionen nicht oder nur teilweise implementiert. Darüber hinaus fehlen eine vollständige Benutzer- und Rechteverwaltung, automatisierte Unit-Tests sowie End-to-End-Workflows. Auch die Frontend-Backend-Integration wurde lediglich in grundlegenden Ansätzen umgesetzt. Insgesamt erreicht das generierte System vier von 18 möglichen Bewertungspunkten und erfüllt damit 22,2\% der definierten Evaluationskriterien. 
+
+\subsection{Gemini 3.1 Pro mit strukturiertem Prompt und Rollendefinition}
+Im dritten Experiment wurde der strukturierte Prompt um eine explizite Rollendefinition erweitert, bei der das Modell die Rolle eines erfahrenen Softwarearchitekten und Full-Stack-Entwicklers einnahm. Die zusammenfassenden Ergebnisse der Evaluation sind in \vref{tab:Gemini 3.1 Pro_strukturierter_prompt} dargestellt.
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Ergebnisse von Gemini 3.1 Pro mit Strukturiertem Prompt}
+\label{tab:Gemini 3.1 Pro_strukturierter_prompt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 1 &
+Grundlegende Benutzeroberfläche, Formulare und Authentifizierung vorhanden. Erweiterte Funktionen wie Filterung, Pagination sowie vollständige CRUD-Operationen fehlen. \\
+Geschäftsobjekte und CRUD-Funktionalität & 0 &
+\textit{Customers, Orders, Rooms, Tasks und Invoices} wurden nicht umgesetzt. Mehrere Module besitzen keine vollständige CRUD-Funktionalität. \\
+Erweiterte Domänenfunktionen & 0 &
+\textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}} wurden nicht oder nur unvollständig implementiert. \\
+Benutzer- und Rechteverwaltung & 0 &
+Benutzer- und Rollenmodelle sind nicht vorhanden, jedoch fehlt eine vollständige Rechteverwaltung und Autorisierung. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 1 &
+Model-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechanismen wurden teilweise umgesetzt. \\
+Unit-Tests & 0 &
+Es wurden keine automatisierten Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 1 &
+Die technische Struktur enthält teilweise nachweisbare Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 1 &
+Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind vorhanden. Komplexe Workflows wurden jedoch nicht vollständig umgesetzt. \\
+End-to-End-Workflows & 0 &
+Keine vollständigen Benutzerabläufe oder automatisierten Integrationstests vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 4 / 18 &
+Das generierte System erreicht 4 von 18 möglichen Bewertungspunkten und erfüllt damit etwa 22,2\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+

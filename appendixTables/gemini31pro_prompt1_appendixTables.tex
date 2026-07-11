@@ -1,0 +1,174 @@
+%!TEX root = ../thesis.tex
+\section{Detaillierte Ergebnisse für Gemini 3.1 Pro mit Basis-Prompt}
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Detaillierte Ergebnisse der funktionalen Kriterien \\(GEMINI-P1-Funktional)}
+\label{tab:functional_detail_evaluation_gemini31pro_prompt1_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 2 &
+Vollständige Django Admin-Benutzeroberfläche mit Formularen, Filterung und Suchfunktion vorhanden. \\
+Session- und Login-Management & 2 &
+Django's Built-in Authentifizierung und Sitzungsverwaltung vollständig implementiert. \\
+Customer-Verwaltung & 2 &
+CRUD-Funktionalitäten für Kunden vollständig vorhanden mit Suchfunktion nach Name und E-Mail. \\
+Bestellverwaltung (Bookings) & 2 &
+Buchungen können vollständig verwaltet werden mit Status-Tracking (RESERVED, CONFIRMED, CHECKED\_IN, CHECKED\_OUT, CANCELLED). \\
+Order Items & 0 &
+Nicht implementiert. \\
+Raumverwaltung (Rooms) & 2 &
+Vollständige Verwaltung von Räumen vorhanden mit Filter nach Zimmertyp und Status. \\
+Room Types & 2 &
+Raumtypen werden vollständig unterstützt mit Basispreisen. \\
+Room Locations & 0 &
+Nicht implementiert. \\
+Services & 0 &
+Keine Serviceverwaltung vorhanden. \\
+Preise, Preiskategorien und Saisons & 1 &
+Basispreise pro Zimmertyp vorhanden, aber keine Saisonpreise oder Preiskategorien. \\
+Occupancies & 0 &
+Nicht vollständig umgesetzt. \\
+Occupancy Items & 0 &
+Nicht implementiert. \\
+Rechnungen (Invoices) & 2 &
+Vollständige Rechnungsfunktionen vorhanden mit Statusverwaltung (PENDING, PAID, CANCELLED). \\
+Invoice Items & 0 &
+Nicht vollständig umgesetzt. \\
+Tasks & 0 &
+Aufgabenverwaltung nicht implementiert. \\
+Kommentare (Comments) & 0 &
+Nicht implementiert. \\   
+Benutzer, Gruppen und Berechtigungen & 1 &
+Django Benutzer- und Rollenmodell vorhanden, detaillierte Autorisierung unvollständig. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 16 / 34 &
+Das System erfüllt den Großteil der definierten funktionalen Kriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der technischen Kriterien\\(GEMINI-P1-Technik)}
+\label{tab:technical_detail_evaluation_gemini31pro_prompt1_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+HTTP-Statuscodes & 1 &
+Implementiert, aber nicht vollständig getestet. \\
+Datenbankzustände & 1 &
+Constraints vorhanden, systematische Tests fehlen. \\
+API-Antworten mit erwarteten Daten & 1 &
+Serializers vorhanden, Tests fehlen. \\
+Fehler- und Ausnahmefälle & 0 &
+Keine automatisierten Tests für Fehlerszenarien. \\
+Verschachtelte Ressourcen & 2 &
+Actions und Filter vollständig funktionsfähig. \\
+Geschäftsregeln der Modelle & 1 &
+Einige Regeln implementiert (Delete-Schutz). \\
+Realistische Testdaten & 0 &
+Keine Seed-Daten oder Fixtures vorhanden. \\
+Erfolgreiche sowie ungültige Fälle & 0 &
+Keine automatisierte Testsuite vorhanden. \\
+Listenansichten mit Sortierfunktion & 2 &
+Ordering auf allen ViewSets implementiert. \\
+Filter- und Suchfunktionen & 2 &
+Search und Filterset-Fields konfiguriert. \\
+Pagination für große Datenmengen & 2 &
+Standard-Pagination aktiv. \\
+Dynamische Seitengröße und Navigation & 2 &
+page\_size-Parameter aktiviert. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 12 / 24 &
+Das System erfüllt grundlegende technische Anforderungen, systematische Tests fehlen jedoch. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der Integrationskriterien\\(GEMINI-P1-Integration)}
+\label{tab:integrity_detail_evaluation_gemini31pro_prompt1}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität (Integration) & 2 &
+Django Admin-Interface ist vollständig mit Backend integriert. \\
+Frontend $\leftrightarrow$ Backend & 2 &
+Formulare und Benutzerinteraktionen werden korrekt an die REST-API übertragen und verarbeitet. \\
+
+REST-API $\leftrightarrow$ Datenbank & 2 &
+CRUD-Operationen werden erfolgreich persistiert und Änderungen korrekt gespeichert. \\
+
+Authentifizierung $\leftrightarrow$ API & 2 &
+Geschützte API-Endpunkte sind nach erfolgreichem Login erreichbar; unautorisierte Zugriffe werden blockiert. \\
+
+Booking $\leftrightarrow$ Invoice & 2 &
+Bei der Erstellung einer Buchung wird automatisch eine zugehörige Rechnung erzeugt. \\
+
+Room $\leftrightarrow$ Booking & 2 &
+Es können ausschließlich verfügbare Zimmer gebucht werden; Belegungen werden berücksichtigt. \\
+
+User $\leftrightarrow$ Rollen & 1 &
+Benutzerrollen sind implementiert, jedoch nur teilweise zur Zugriffskontrolle integriert. \\
+
+HTML-Templates $\leftrightarrow$ Backend & 0 &
+Backend-Daten werden kein HTML-Templates dargestellt, da ist nur Django Admin-Interface implementiert. \\
+
+API $\leftrightarrow$ Serializer $\leftrightarrow$ Datenbank & 2 &
+Daten werden korrekt serialisiert, validiert und dauerhaft in der Datenbank gespeichert. \\
+
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 15 / 18 &
+Das System erfüllt den Großteil der integrativen Kriterien; End-to-End-Workflows sind funktional. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Gesamtübersicht der Bewertungsergebnisse}
+\label{tab:detailed_summary_gemini31pro_prompt1}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.0cm}@{}}
+\toprule
+\textbf{Kategorie} & \textbf{Erreicht} & \textbf{Maximal} & \textbf{Erfüllung} \\
+\midrule
+Funktionale Kriterien & 16 & 34 & 47\% \\
+Technische Kriterien & 12 & 24 & 50\% \\
+Integrationskriterien & 15 & 18 & 83,3\% \\
+\midrule
+\textbf{GESAMTERGEBNIS} & \textbf{43} & \textbf{78} & \textbf{55,1\%} \\
+\bottomrule
+\end{tabularx}
+\end{table}

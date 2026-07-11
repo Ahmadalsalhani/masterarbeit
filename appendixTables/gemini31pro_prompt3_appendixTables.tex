@@ -1,0 +1,174 @@
+%!TEX root = ../thesis.tex
+\section{Detaillierte Ergebnisse für Gemini 3.1 Pro mit Rollendefinition}
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Detaillierte Ergebnisse der funktionalen Kriterien\\(GEMINI-P3-Funktional)}
+\label{tab:functional_detail_evaluation_Gemini3.1_prompt3_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 1 &
+Grundlegende Benutzeroberfläche unvollständig vorhanden. \\
+Session- und Login-Management & 0 &
+Authentifizierung und Sitzungsverwaltung nicht implementiert. \\
+Customer-Verwaltung & 0 &
+CRUD-Funktionalitäten teilweise vorhanden. \\
+Bestellverwaltung (Orders) & 0 &
+Bestellungen können nicht verwaltet werden. \\
+Order Items & 0 &
+Nicht implementiert. \\
+Raumverwaltung (Rooms) & 1 &
+Grundlegende Verwaltung von Räumen vorhanden. \\
+Room Types & 0 &
+Raumtypen werden teilweise unterstützt. \\
+Room Locations & 0 &
+Nicht oder nur unvollständig umgesetzt. \\
+Services & 0 &
+Keine vollständige Serviceverwaltung vorhanden. \\
+Preise, Preiskategorien und Saisons & 0 &
+Nicht implementiert. \\
+Occupancies & 0 &
+Nicht vollständig umgesetzt. \\
+Occupancy Items & 0 &
+Nicht implementiert. \\
+Rechnungen (Invoices) & 1 &
+Grundlegende Rechnungsfunktionen in Backend-End als "booking" Anwendung Django vorhanden. \\
+Invoice Items & 0 &
+Nicht vollständig umgesetzt. \\
+Tasks & 1 &
+Aufgabenverwaltung teilweise implementiert. \\
+Kommentare (Comments) & 0 &
+Nicht implementiert. \\   
+Benutzer, Gruppen und Berechtigungen & 0 &
+Benutzer- und Rollenmodell nicht vorhanden, Autorisierung unvollständig. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 4 / 34 &
+Das System erfüllt einen Teil der definierten funktionalen Kriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der technischen Kriterien\\(GEMINI-P3-Technisch)}
+\label{tab:technical_detail_evaluation_Gemini3.1_prompt3_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+HTTP-Statuscodes & 1 &
+Implementiert, aber nicht vollständig getestet. \\
+Datenbankzustände & 1 &
+Constraints vorhanden, systematische Tests fehlen. \\
+API-Antworten mit erwarteten Daten & 1 &
+Serializers vorhanden, Tests fehlen. \\
+Fehler- und Ausnahmefälle & 0 &
+Keine automatisierten Tests für Fehlerszenarien. \\
+Verschachtelte Ressourcen & 2 &
+Actions und Filter vollständig funktionsfähig. \\
+Geschäftsregeln der Modelle & 1 &
+Einige Regeln implementiert (Delete-Schutz). \\
+Realistische Testdaten & 0 &
+Keine Seed-Daten oder Fixtures vorhanden. \\
+Erfolgreiche sowie ungültige Fälle & 0 &
+Keine automatisierte Testsuite vorhanden. \\
+Listenansichten mit Sortierfunktion & 0 &
+keine Ordering auf allen ViewSets implementiert. \\
+Filter- und Suchfunktionen & 0 &
+keine Search und Filterset-Fields konfiguriert. \\
+Pagination für große Datenmengen & 0 &
+keine Standard-Pagination aktiv. \\
+keine Dynamische Seitengröße und Navigation & 0 &
+page\_size-Parameter aktiviert. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 6 / 24 &
+Das System erfüllt grundlegende technische Anforderungen, systematische Tests fehlen jedoch. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der Integrationskriterien\\(GEMINI-P3-Integrierbarkeit)}
+\label{tab:integrity_detail_evaluation_Gemini3.1_prompt3_appendix}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität (Integration) & 2 &
+Grafik User Interface ist vollständig mit Backend integriert. \\
+Frontend $\leftrightarrow$ Backend & 1 &
+Formulare und Benutzerinteraktionen werden teilweise an die REST-API übertragen und verarbeitet. \\
+
+REST-API $\leftrightarrow$ Datenbank & 2 &
+CRUD-Operationen werden erfolgreich persistiert und Änderungen korrekt gespeichert. \\
+
+Authentifizierung $\leftrightarrow$ API & 0 &
+Keine Geschützte API-Endpunkte sind nach erfolgreichem Login nicht erreichbar; unautorisierte Zugriffe werden blockiert. \\
+
+Booking $\leftrightarrow$ Invoice & 0 &
+Bei der Erstellung einer Buchung wird keine Rechnung erzeugt. \\
+
+Room $\leftrightarrow$ Booking & 1 &
+Es können ausschließlich verfügbare Zimmer gebucht werden; Belegungen werden berücksichtigt. \\
+
+User $\leftrightarrow$ Rollen & 1 &
+Benutzerrollen sind implementiert, jedoch nur teilweise zur Zugriffskontrolle integriert. \\
+
+HTML-Templates $\leftrightarrow$ Backend & 2 &
+Backend-Daten werden korrekt in HTML-Templates dargestellt und Formulare verarbeitet. \\
+
+API $\leftrightarrow$ Serializer $\leftrightarrow$ Datenbank & 2 &
+Daten werden korrekt serialisiert, validiert und dauerhaft in der Datenbank gespeichert. \\
+
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 11 / 18 &
+Das System erfüllt den Großteil der integrativen Kriterien; End-to-End-Workflows sind funktional. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\newpage
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Gesamtübersicht der Bewertungsergebnisse}
+\label{tab:detailed_summary_gemini31pro_prompt3}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.0cm}@{}}
+\toprule
+\textbf{Kategorie} & \textbf{Erreicht} & \textbf{Maximal} & \textbf{Erfüllung} \\
+\midrule
+Funktionale Kriterien & 4 & 34 & 11,8\% \\
+Technische Kriterien & 6 & 24 & 25,0\% \\
+Integrationskriterien & 11 & 18 & 61,1\% \\
+\midrule
+\textbf{GESAMTERGEBNIS} & \textbf{21} & \textbf{76} & \textbf{27,6\%} \\
+\bottomrule
+\end{tabularx}
+\end{table}

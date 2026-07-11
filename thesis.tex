@@ -1,0 +1,77 @@
+\documentclass{scrbook}
+
+\input{style}
+\input{macros}
+
+% Set title and author used in the PDF meta data
+\hypersetup{
+  pdftitle={Evaluation verschiedener LLM-Modelle am
+Beispiel eine Web-Entwicklung für
+des Passat Buchungssystem},
+  pdfauthor={Ahmad Alsalhani}
+}
+
+
+\input{schema-color}
+
+\newcommand{\duedate}{\today}
+
+\begin{document}
+  \frontmatter
+  \include{title}
+  \include{declaration}
+  \include{abstract}
+  \include{Danksagung}
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{\contentsname}{tableofcontents}
+  \markboth{\contentsname}{}
+  \tableofcontents
+  \listoftables
+  % Remove this for the final version of the thesis!
+  %\cleardoublepage
+  %\phantomsection
+  %\newcommand{\listtodoname}{Aufgabenverzeichnis}
+  %\pdfbookmark{\listtodoname}{listoftodos}
+  %\listoftodos[\listtodoname]
+
+  \mainmatter
+  \include{einleitung}
+  \include{grundlagen}
+  \include{konzept}
+  \include{evaluationTables}
+  \include{fazit}
+  \appendix
+  \include{appendix}
+
+  \backmatter
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{\listfigurename}{listoffigures}
+  \listoffigures
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{\listtablename}{listoftables}
+  \listoftables
+
+  %\cleardoublepage
+  %\phantomsection
+  %\renewcommand{\listtheoremname}{Definitions- und Theoremverzeichnis}
+  %\pdfbookmark{\listtheoremname}{listoftheorems}
+  %\listoftheorems[ignoreall,show={Lemma,Theorem,Korollar,Definition}]
+
+  %\cleardoublepage
+  %\phantomsection
+  %\pdfbookmark{\lstlistlistingname}{listoflistings}
+  %\lstlistoflistings
+
+  %\include{abkuerzungen}
+
+  \cleardoublepage
+  %\phantomsection
+  \pdfbookmark{\bibname}{bibliography}
+  \bibliography{literature}
+\end{document}

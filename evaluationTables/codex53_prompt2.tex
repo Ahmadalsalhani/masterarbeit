@@ -1,0 +1,62 @@
+%!TEX root = ../thesis.tex
+\subsection{GPT-5.3-Codex mit Strukturiertem Prompt}
+
+Im zweiten Experiment wurde GPT-5.3-GPT-5.3-Codex mit Strukturiertem Prompt verwendet. Im Rahmen der Implementierung der Kundenerfassung trat ein Validierungsfehler auf, der das Speichern neuer Kundendatensätze verhinderte. Die Ursache lag in einer Inkonsistenz zwischen Frontend und Backend: Während das Backend bestimmte Pflichtfelder für die Verarbeitung des Formulars voraussetzte, wurden diese im Frontend nicht zur Eingabe bereitgestellt. Dadurch konnte die Formularvalidierung nicht erfolgreich abgeschlossen werden.
+Da die Kundenverwaltung die Grundlage für nachgelagerte Geschäftsprozesse bildet, waren auch Funktionen wie die Erstellung von Buchungen und Rechnungen nicht ausführbar. Die Behebung des Fehlers erforderte die Abstimmung der Frontend-Eingabemasken mit den im Backend definierten Formular- und Datenmodellanforderungen, sodass alle erforderlichen Informationen vollständig übermittelt und verarbeitet werden konnten.
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Ergebnisse von GPT-5.3-Codex mit strukturiertem Prompt}
+\label{tab:GPT-5.3-Codex_strukturiertes_prompt_evaluation}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 2 &
+Grundlegende Benutzeroberfläche, Formulare und Authentifizierung vorhanden. Erweiterte Funktionen wie Filterung, Pagination sowie vollständige CRUD-Operationen sind vorhanden. \\
+Geschäftsobjekte und CRUD-Funktionalität & 1 &
+\textit{Customers, Bookings, Rooms, Invoices, Occupancies} Anwendungen wurden umgesetzt. Mehrere Module besitzen keine vollständige CRUD-Funktionalität. \\
+Erweiterte Domänenfunktionen & 2 &
+\textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}} wurden vollständig implementiert. \\
+Benutzer- und Rechteverwaltung & 2 &
+Benutzer- und Rollenmodelle sind vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 1 &
+Modell-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechanismen wurden teilweise umgesetzt. \\
+Unit-Tests & 2 &
+Es wurden automatisierte Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 2 &
+Die technische Struktur enthält nachweisbaren Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 1 &
+Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind teilweise vorhanden. Komplexe Workflows wurden jedoch nicht vollständig umgesetzt. \\
+End-to-End-Workflows & 1 &
+Vollständige Benutzerabläufe oder automatisierten Integrationstests teilweise vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 14 / 18 &
+Das generierte System erreicht 14 von 18 möglichen Bewertungspunkten und erfüllt damit etwa 77,8\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+
+Die in der (\ref{tab:GPT-5.3-Codex_strukturiertes_prompt_evaluation}) dargestellten Ergebnisse zeigen, dass GPT-5.3-Codex bei Verwendung eines strukturierten Prompts insbesondere im Bereich der funktionalen Anforderungen gute Ergebnisse erzielt. Für die allgemeine Funktionalität, die Umsetzung von Geschäftsobjekten und CRUD-Funktionalitäten sowie die Implementierung erweiterter Domänenfunktionen wurde jeweils die maximale Punktzahl erreicht. Das generierte System umfasst eine grundlegende Benutzeroberfläche mit Authentifizierungsmechanismen sowie verschiedene Geschäftsobjekte wie \textit{Customers}, \textit{Orders}, \textit{Rooms}, \textit{Tasks} und \textit{Invoices}. 
+Bei der Implementierung der Kundenverwaltung wurde ein Fehler festgestellt, der auf eine unvollständige Umsetzung der funktionalen Anforderungen zurückzuführen ist. Obwohl in der Spezifikation festgelegt wurde, dass Kundendaten strukturiert mit separaten Adressfeldern erfasst werden sollen, generierte das KI-Modell im Frontend-Template lediglich ein allgemeines Adressfeld. Im zugehörigen Django-Backend-Formular wurden jedoch weiterhin die einzelnen Pflichtfelder \texttt{street\_name}, \texttt{street\_number}, \texttt{city}, \texttt{postal\_code} und \texttt{country} erwartet.
+Diese Inkonsistenz führte dazu, dass das Formular im Frontend zwar ausgefüllt werden konnte, beim Speichern jedoch eine Validierung im Backend fehlschlug. Das Backend meldete, dass mehrere Pflichtfelder nicht übermittelt wurden. Zusätzlich wurde die Zustimmung zur Datenschutzerklärung nicht im Template abgebildet, obwohl das Formular diese über das Feld \texttt{privacy\_consent} verpflichtend validierte. Dadurch konnte kein neuer Kundendatensatz gespeichert werden.
+Der Fehler zeigt, dass das KI-Modell die funktionalen Anforderungen nicht vollständig über die beteiligten Anwendungsschichten hinweg konsistent umgesetzt hat. Insbesondere wurde keine ausreichende Konsistenz zwischen Datenmodell, Formularlogik und Template hergestellt. Während das Backend eine strukturierte Datenerfassung voraussetzte, stellte das Frontend nicht alle erforderlichen Eingabefelder bereit. Dadurch entstand ein Bruch zwischen Spezifikation, Backend-Validierung und Benutzeroberfläche.
+Die Kundenentität stellte in diesem Szenario einen kritischen Abhängigkeitspunkt (Single Point of Failure) dar. Da mehrere Geschäftsprozesse direkt von der erfolgreichen Anlage und Verwaltung von Kundendaten abhängen, führte der Fehler in der Kundenverwaltung zu einer Kaskade von Funktionseinschränkungen in anderen Systemmodulen. Dadurch wurde die Ausführung zentraler Anwendungsfälle, wie die Erstellung von Buchungen und Rechnungen, vollständig verhindert.
+Insgesamt erreicht das generierte System 14 von 18 möglichen Bewertungspunkten und erfüllt damit 77,8\% der definierten Evaluationskriterien.

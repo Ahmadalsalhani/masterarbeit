@@ -1,0 +1,174 @@
+%!TEX root = ../thesis.tex
+\section{Detaillierte Ergebnisse für GPT GPT-5.3-Codex 5.3 mit Basis-Prompt}
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Detaillierte Ergebnisse der funktionalen Kriterien \\(GPT-5.3-Codex-P1-Funktional)}
+\label{tab:functional_detail_evaluation_GPT-5.3-Codex53_prompt1_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 2 &
+Strukturierte Datenformate mit HTML und Formularen vollständig. \\
+Session- und Login-Management & 2 &
+Session-Login und Authentifizierung vollständig implementiert. \\
+Customer-Verwaltung & 2 &
+CRUD-Funktionalitäten vollständig vorhanden. \\
+Bestellverwaltung (Bookings) & 2 &
+Vollständig mit verschachtelten Routen implementiert. \\
+Order Items & 2 &
+REST-Routen und CRUD-Operationen vollständig. \\
+Raumverwaltung (Rooms) & 2 &
+Vollständige Verwaltung von Räumen mit Schutzregeln. \\
+Room Types & 2 &
+Raumtypen vollständig unterstützt. \\
+Room Locations & 2 &
+Raumorte mit optionaler Sortierung unterstützt. \\
+Services & 2 &
+REST-Routen und CRUD-Funktionalität vollständig. \\
+Preise, Preiskategorien und Saisons & 2 &
+Vollständig mit Preisregeln und Saison-Management. \\
+Occupancies & 2 &
+REST-Routen und CRUD-Operationen vollständig. \\
+Occupancy Items & 2 &
+Einträge mit optionaler Sortierung vollständig. \\
+Rechnungen (Invoices) & 2 &
+Vollständige Rechnungsfunktionen mit Generierung. \\
+Invoice Items & 2 &
+Vollständig implementiert mit Sortierung. \\
+Tasks & 0 &
+Verschachtelte Routen und CRUD-Operationen nicht implementiert. \\
+Kommentare (Comments) & 2 &
+REST-Routen mit polymorpher Unterstützung vollständig. \\   
+Benutzer, Gruppen und Berechtigungen & 0 &
+Benutzer- und Rollenmodell mit Gruppen und Berechtigungen nicht implementiert. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 30 / 34 &
+Das System erfüllt alle definierten funktionalen Kriterien vollständig. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Detaillierte Ergebnisse der technischen Kriterien \\(GPT-5.3-Codex-P1-Technisch)}
+\label{tab:technical_detail_evaluation_GPT-5.3-Codex5.3_prompt1}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+HTTP-Statuscodes & 1 &
+Implementiert, aber nicht vollständig getestet. \\
+Datenbankzustände & 1 &
+Constraints vorhanden, systematische Tests fehlen. \\
+API-Antworten mit erwarteten Daten & 1 &
+Serializers vorhanden, Tests fehlen. \\
+Fehler- und Ausnahmefälle & 0 &
+Keine automatisierten Tests für Fehlerszenarien. \\
+Verschachtelte Ressourcen & 2 &
+Actions und Filter vollständig funktionsfähig. \\
+Geschäftsregeln der Modelle & 1 &
+Einige Regeln implementiert (Delete-Schutz). \\
+Realistische Testdaten & 1 &
+Seed-Daten oder Fixtures teilweise vorhanden. \\
+Erfolgreiche sowie ungültige Fälle & 0 &
+Keine automatisierte Testsuite vorhanden. \\
+Listenansichten mit Sortierfunktion & 2 &
+Ordering auf allen ViewSets implementiert. \\
+Filter- und Suchfunktionen & 2 &
+Search und Filterset-Fields konfiguriert. \\
+Pagination für große Datenmengen & 0 &
+Standard-Pagination aktiv. \\
+Dynamische Seitengröße und Navigation & 0 &
+page\_size-Parameter aktiviert. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 12 / 24 &
+Das System erfüllt grundlegende technische Anforderungen, systematische Tests fehlen jedoch. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der Integrationskriterien \\(GPT-5.3-Codex-P1-Integrität)}
+\label{tab:integrity_detail_evaluation_GPT-5.3-Codex5.3_prompt1}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität (Integration) & 2 &
+Django Admin-Interface ist vollständig mit Backend integriert. \\
+Frontend $\leftrightarrow$ Backend & 2 &
+Formulare und Benutzerinteraktionen werden korrekt an die REST-API übertragen und verarbeitet. \\
+
+REST-API $\leftrightarrow$ Datenbank & 2 &
+CRUD-Operationen werden erfolgreich persistiert und Änderungen korrekt gespeichert. \\
+
+Authentifizierung $\leftrightarrow$ API & 2 &
+Geschützte API-Endpunkte sind nach erfolgreichem Login erreichbar; unautorisierte Zugriffe werden blockiert. \\
+
+Booking $\leftrightarrow$ Invoice & 2 &
+Bei der Erstellung einer Buchung wird automatisch eine zugehörige Rechnung erzeugt. \\
+
+Room $\leftrightarrow$ Booking & 1 &
+Es können ausschließlich verfügbare Zimmer gebucht werden;Keine Belegungen werden berücksichtigt. \\
+
+User $\leftrightarrow$ Rollen & 1 &
+Benutzerrollen sind implementiert, jedoch nur teilweise zur Zugriffskontrolle integriert. \\
+
+HTML-Templates $\leftrightarrow$ Backend & 2 &
+Backend-Daten werden korrekt in HTML-Templates dargestellt und Formulare verarbeitet. \\
+
+API $\leftrightarrow$ Serializer $\leftrightarrow$ Datenbank & 0 &
+Daten werden nicht serialisiert, validiert und dauerhaft in der Datenbank gespeichert. \\
+
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 14 / 18 &
+Das System erfüllt den Großteil der integrativen Kriterien; End-to-End-Workflows sind funktional. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Gesamtübersicht der Bewertungsergebnisse}
+\label{tab:overall_evaluation_summary_GPT-5.3-Codex53_prompt1}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}p{3.0cm}@{}}
+\toprule
+\textbf{Kriteriengruppe} & \textbf{Erreicht} & \textbf{Maximal} & \textbf{Prozentsatz} \\
+\midrule
+Funktionale Kriterien & 30 & 34 & 88,2\% \\
+Technische Kriterien & 14 & 24 & 58,3\% \\
+Integritätskriterien & 12 & 18 & 66,7\% \\
+\midrule
+\textbf{Gesamtergebnis} & \textbf{56} & \textbf{76} & \textbf{73,7\%} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+

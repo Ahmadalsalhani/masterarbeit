@@ -1,0 +1,762 @@
+\newpage
+\section{Prompt 1: Erweiterter Basis-Prompt}
+
+Entwickeln Sie ein Konzept sowie eine prototypische Implementierung für ein webbasiertes Buchungs- und Reservierungssystem zur Verwaltung raumähnlicher Ressourcen in kleinen Jugendherbergen, Pensionen und Hotels. Das System soll zunächst generisch für kleine Beherbergungsbetriebe konzipiert werden und anschließend an die spezifischen Anforderungen der Passat in Travemünde anpassbar sein.
+
+\subsection{Technologische Vorgaben}
+
+Die Anwendung ist unter Verwendung der Programmiersprache \texttt{Python} und des Webframeworks \texttt{Django} zu realisieren. Das System ist als eigenständige Webanwendung mit eigener Benutzeroberfläche zu entwickeln und darf nicht auf dem Django-Admin-Interface basieren. Stattdessen sind eigene Django-Models, Views, Templates, Forms und URLs gemäß dem Model-View-Template-Prinzip (MVT) zu implementieren.
+
+\subsection{Kernfunktionen}
+
+Das System soll mindestens die folgenden Funktionen bereitstellen:
+
+\begin{itemize}
+\item Verwaltung von Räumen und Raumtypen
+\item Verwaltung von Kunden
+\item Verwaltung von Buchungsvorgängen
+\item Unterstützung der Statusarten:
+\begin{itemize}
+\item Option
+\item Reservierung
+\item Buchung
+\item Belegung
+\item Stornierung
+\end{itemize}
+\item Kalenderansicht mit Raum- und Zeitachsen
+\item Übersicht über die aktuelle Belegung
+\item Rechnungsstellung mit Rechnungsvorschlag und PDF-Erzeugung
+\item Berechnung der Kurabgabe
+\item Dynamischer Preiskatalog mit saisonabhängigen Preisen
+\item Benutzerrollen- und Rechteverwaltung
+\item To-Do-Liste mit tagesaktuellen Aufgaben
+\item Aktivitätshistorie aller Benutzeraktionen
+\item Statistische Auswertung der Belegungsdaten
+\end{itemize}
+
+\subsection{Datenmodell}
+
+Das Datenmodell soll mindestens die folgenden Objekte enthalten:
+
+\begin{itemize}
+\item Benutzer
+\item Rolle
+\item Kunde
+\item Raum
+\item Raumtyp
+\item Vorgang/Buchung
+\item Zusatzobjekt
+\item Zusatzleistung
+\item Preiskategorie
+\item Belegungsprotokoll
+\item Rechnung
+\item Aufgabe/To-Do
+\item Aktivitätshistorie
+\item Notiz
+\end{itemize}
+
+\subsection{Benutzerverwaltung}
+
+Das System soll von mehreren Benutzern gleichzeitig über einen Webbrowser genutzt werden können. Es muss eine Benutzeranmeldung bereitstellen und mindestens die folgenden Rollen unterstützen:
+
+\begin{itemize}
+\item Administrator
+\item Verwaltungsmitarbeiter
+\item Mitarbeiter vor Ort
+\item Hafenmeister
+\end{itemize}
+
+\subsection{Prototypische Django-Struktur}
+
+Für die prototypische Umsetzung sind mindestens folgende Komponenten bereitzustellen:
+
+\begin{itemize}
+\item Models
+\item Forms
+\item Views
+\item Templates
+\item URLs
+\item Einfache Navigation
+\item Dashboard
+\item Kalenderansicht
+\item Kundenverwaltung
+\item Raumverwaltung
+\item Buchungsverwaltung
+\item Rechnungsübersicht
+\item To-Do-Liste
+\end{itemize}
+
+\subsection{Benutzeroberfläche}
+
+Die Benutzeroberfläche soll benutzerfreundlich gestaltet sein und als eigenständige Webanwendung funktionieren. Die Verwendung von Django-Admin-Seiten als Hauptoberfläche ist nicht zulässig.
+
+
+\newpage
+\section{Prompt 2: Erweiterter strukturierter Prompt}
+
+\subsection{Kontext}
+
+Es soll ein webbasiertes Client-Server-System zur Buchungs- und Reservierungsverwaltung raumähnlicher Ressourcen entwickelt werden. Zielgruppe sind kleine Jugendherbergen, Pensionen und Hotels. In einem zweiten Schritt soll das generische System an die spezifischen Anforderungen der Passat in Travemünde angepasst werden.
+
+Das System dient der Verwaltung von Räumen, Kunden, Buchungen, Reservierungen, Belegungen, Rechnungen, Kurabgaben, Aufgaben sowie statistischen Auswertungen.
+
+\subsection{Technologische Vorgaben}
+
+Das System ist mit den folgenden Technologien umzusetzen:
+
+\begin{itemize}
+\item \textbf{Programmiersprache}: Python
+\item \textbf{Webframework}: Django
+\item \textbf{Architektur}: Django Model-View-Template
+\item \textbf{Datenbank}: relationale Datenbank, beispielsweise PostgreSQL oder SQLite für den Prototyp
+\item \textbf{Client}: Webbrowser
+\item \textbf{Server}: Django-Webserver, später produktiv beispielsweise über Gunicorn/Nginx
+\item \textbf{Zugriff}: webbasiert, ohne Installation auf dem Client
+\end{itemize}
+
+Das System muss als eigenständige vollständige Webseite entwickelt werden. Es darf nicht auf dem Django-Admin-Interface basieren. Das Django-Admin-Interface darf höchstens intern zu Entwicklungszwecken existieren, jedoch nicht als Benutzeroberfläche des Systems verwendet werden. Stattdessen sind eigene Seiten, Views, Templates, Forms und Navigationsstrukturen zu erstellen.
+
+\subsection{Ziel des Systems}
+
+Zu entwickeln ist eine prototypische Webanwendung, mit der kleine Beherbergungsbetriebe Räume, Kunden, Buchungen, Belegungen und Rechnungen verwalten können.
+
+Das System soll insbesondere folgende Aufgaben unterstützen:
+
+\begin{itemize}
+\item Räume optionieren
+\item Räume reservieren
+\item Räume buchen
+\item Räume tatsächlich belegen
+\item Vorgänge stornieren
+\item Kunden verwalten
+\item Rechnungen erzeugen
+\item Kurabgaben berechnen
+\item Aufgaben anzeigen
+\item Belegungen im Kalender darstellen
+\item Auswertungen erzeugen
+\item Benutzeraktionen protokollieren
+\end{itemize}
+
+\subsection{Pflichtfunktionen}
+
+\subsubsection{Rechnungsstellung}
+
+Das System generiert aus Buchungen, Belegungen, Zusatzleistungen und Stornierungen einen Rechnungsvorschlag. Der Benutzer kann diesen Vorschlag manuell ändern. Es müssen Pauschalbeträge sowie prozentuale Zu- oder Abschläge möglich sein. Aus der fertigen Rechnung soll ein PDF erzeugt werden. Der geänderte Rechnungsdatensatz muss gespeichert werden.
+
+\subsubsection{To-Do-Liste}
+
+Das System stellt eine tagesaktuelle Aufgabenliste bereit. Diese enthält unter anderem abgelaufene Optionierungen, abgelaufene Reservierungen, fällige Erinnerungen und zu erstellende Rechnungen. Aufgaben sollen nach Art und Priorität sortierbar sein. Bearbeitete Aufgaben werden aus der aktiven Liste entfernt.
+
+\subsubsection{Anpassung an das eigene Hotel}
+
+Administratoren sollen Räume, Raumtypen, Preiskategorien, Zusatzobjekte, Zusatzleistungen, Benutzergruppen und Buchungsabläufe verwalten können. Außerdem sollen Grundrisse hochgeladen und Räume darauf markiert werden können.
+
+\subsubsection{Kalendermodul}
+
+Das System enthält eine Kalenderansicht mit Raum- und Zeitachsen. Räume und Tage sollen als Zeilen oder Spalten dargestellt werden können. Der Benutzer soll zwischen Tages-, Wochen-, Monats- und Jahresansicht wechseln können. Vorgangstypen sollen farblich unterscheidbar sein. Aus dem Kalender heraus sollen Buchungen angelegt und bearbeitet werden können.
+
+\subsubsection{Belegungsübersicht}
+
+Das System zeigt die aktuelle Belegung der Räume an. Optional soll eine Darstellung über Grundrisse beziehungsweise Etagen möglich sein. Freie Räume sollen direkt aus dieser Ansicht belegt werden können.
+
+\subsubsection{Dynamischer Preiskatalog}
+
+Preise sollen von Raumtyp, Preiskategorie und Saison abhängig sein. Administratoren sollen Preise ändern können.
+
+\subsubsection{Rollen- und Rechtesystem}
+
+Das System unterstützt Benutzeranmeldung und verschiedene Rollen. Für das Passat-System sind mindestens folgende Rollen zu berücksichtigen:
+
+\begin{itemize}
+\item Administrator
+\item Verwaltungsmitarbeiter
+\item Mitarbeiter vor Ort
+\item Hafenmeister
+\end{itemize}
+
+Alle wichtigen Aktionen sollen Rechte besitzen, die Rollen zugeordnet werden können.
+
+\subsubsection{Verteilte Nutzung}
+
+Das System läuft auf einem Server und kann von verschiedenen Clients über den Browser genutzt werden. Mehrere Benutzer können gleichzeitig arbeiten. Bei kritischen Aufgaben soll ein gegenseitiger Ausschluss möglich sein, damit nicht zwei Benutzer gleichzeitig denselben Datensatz bearbeiten.
+
+\subsubsection{Buchungsprozess}
+
+Räume können für bestimmte Zeiträume einem Vorgang zugeordnet werden. Ein Vorgang kann die Status \textit{Option}, \textit{Reservierung}, \textit{Buchung}, \textit{Belegung} oder \textit{Stornierung} besitzen. Übergangszeitpunkte zwischen Statusarten sollen manuell gesetzt werden können und Aufgaben in der To-Do-Liste erzeugen. Kostenvoranschläge und Erinnerungen sollen möglich sein.
+
+\subsubsection{Kundendatenverwaltung}
+
+Kundendaten können angelegt, gespeichert, bearbeitet und gelöscht werden. Bei bekannten Kunden sollen Daten wiederverwendet werden. Kunden können auf eine Blacklist gesetzt werden, sodass bei erneutem Kontakt eine Warnung erscheint.
+
+\subsubsection{Konfigurierbarer Buchungsablauf}
+
+Administratoren können die Schritte des Buchungsablaufs und deren Reihenfolge festlegen. Für jeden Schritt sollen erforderliche Kundendaten definiert werden können.
+
+\subsubsection{Kurabgabe}
+
+Das System berechnet aus der Belegung die Kurabgabe und kann dafür eine PDF-Rechnung erzeugen.
+
+\subsubsection{Raumtypenverwaltung}
+
+Administratoren können Raumtypen mit Namen und Beschreibung verwalten.
+
+\subsubsection{Statistische Auswertung}
+
+Das System stellt statistische Auswertungen bereit, beispielsweise:
+
+\begin{itemize}
+\item Übernachtungen pro Raum und Zeitraum
+\item Gesamtübernachtungen pro Betrieb und Zeitraum
+\item Anzahl und Zeitpunkt stornierter Buchungen
+\item Einnahmen pro Kunde
+\item Einnahmen pro Raum
+\item Einnahmen gesamt
+\item Einnahmen pro Zeitraum
+\item Einnahmen nach Quelle
+\end{itemize}
+
+\subsubsection{Aktivitätshistorie}
+
+Alle Benutzeraktionen werden in einer Aktivitätshistorie gespeichert. Jede wichtige Aktion soll mit Benutzer, Zeitpunkt, Objekt, Aktion und Beschreibung protokolliert werden.
+
+\subsection{Optionale Funktionen}
+
+Optional sollen folgende Erweiterungen berücksichtigt werden:
+
+\begin{itemize}
+\item Gegenseitiger Ausschluss bei gleichzeitiger Bearbeitung
+\item Fremdsprachenunterstützung
+\item Systemkonfiguration durch Benutzer
+\item Anpassbare Systemdarstellung
+\item Automatischer E-Mail-Versand an Kunden
+\item Buchungsvorgang als Checkliste
+\item Kontextabhängiges Hilfesystem
+\item Wiederverwendbarkeit von Texten aus einem späteren Handbuch
+\end{itemize}
+
+\subsection{Abgrenzungen}
+
+Das System soll keine automatische Anbindung an das MACH-Kassensystem enthalten. Eine Belegnummer aus MACH kann jedoch als Feld in der Rechnung gespeichert werden. Die Projektgruppe ist nach Projektabschluss nicht weiter zuständig.
+
+\subsection{Produktdaten}
+
+Es ist ein geeignetes Datenmodell mit mindestens folgenden Entitäten und Feldern zu erstellen:
+
+\subsubsection{Benutzer}
+
+\begin{itemize}
+\item Benutzername
+\item Passwort
+\item Rolle
+\item Kürzel
+\item Vorname
+\item Nachname
+\item Bereich
+\item Adresse
+\item Telefonnummer
+\end{itemize}
+
+\subsubsection{Kunde}
+
+\begin{itemize}
+\item Titel
+\item Anrede
+\item Vorname
+\item Nachname
+\item Adresse
+\item Kundentyp
+\item E-Mail
+\item Telefon
+\item Fax
+\item Eindeutige Kundennummer
+\item Partner-ID
+\item Blacklist-Status
+\end{itemize}
+
+\subsubsection{Rolle}
+
+\begin{itemize}
+\item Bezeichnung
+\item Rechte
+\end{itemize}
+
+\subsubsection{Raum}
+
+\begin{itemize}
+\item Raum-ID
+\item Name
+\item Typ
+\item Personenplätze
+\item Mehrfachbelegung möglich
+\item Preiskategorie
+\item Zusatzobjekte
+\end{itemize}
+
+\subsubsection{Raumtyp}
+
+\begin{itemize}
+\item Name
+\item Beschreibung
+\end{itemize}
+
+\subsubsection{Vorgang/Buchung}
+
+\begin{itemize}
+\item Kunde
+\item Raum
+\item Personenanzahl
+\item Bearbeiter
+\item Zeitraum
+\item Transaktionsstatus
+\item Raumstatus
+\item Erinnerungszeitpunkt
+\item Statusänderungen
+\item Erstellungszeitpunkt
+\item Anlass der Buchung
+\item Belegungstyp
+\item Zusatzobjekte
+\item Zusatzleistungen
+\end{itemize}
+
+\subsubsection{Zusatzobjekt}
+
+\begin{itemize}
+\item Räume
+\item Typ
+\item Beschreibung
+\item Preis
+\end{itemize}
+
+\subsubsection{Belegungsprotokoll}
+
+\begin{itemize}
+\item Räume
+\item Personenanzahl
+\item Anzahl kurabgabepflichtiger Personen
+\item Schäden
+\item Notiz
+\item Zugehörige Buchung
+\item Zeitraum
+\end{itemize}
+
+\subsubsection{Preiskategorie}
+
+\begin{itemize}
+\item Bezeichnung
+\item Preis
+\item Saison beziehungsweise Gültigkeitszeitraum
+\end{itemize}
+
+\subsubsection{Rechnung}
+
+\begin{itemize}
+\item Belegnummer
+\item Rechnungsbetreff
+\item Rechnungsposten
+\item Rechnungsbetrag
+\item Rechnungsdatum
+\item Zahlbar bis
+\item Bearbeiter
+\item PDF-Datei
+\end{itemize}
+
+\subsubsection{Weitere allgemeine Objekte}
+
+\begin{itemize}
+\item Notizen
+\item Aufgaben
+\item Aktivitätshistorie
+\item Konfiguration
+\item Buchungsschritte
+\end{itemize}
+
+\subsection{Erwartete Ausgabe}
+
+Die Lösung soll ausführlich sein und folgende Struktur besitzen:
+
+\begin{enumerate}
+\item Systemüberblick
+\item Modulübersicht
+\item Django-Projektstruktur
+\item Datenmodell mit Django-Models
+\item Beschreibung der wichtigsten Geschäftsprozesse
+\item Views und URL-Struktur
+\item Forms für die wichtigsten Eingaben
+\item Template-Struktur für die eigene Webseite
+\item Beschreibung der Benutzeroberfläche
+\item Beispielcode für zentrale Funktionen
+\item Hinweise zu Mehrbenutzerbetrieb und Sperrmechanismen
+\item Hinweise zu PDF-Erzeugung
+\item Hinweise zu statistischen Auswertungen
+\item Erweiterungsmöglichkeiten
+\end{enumerate}
+
+\newpage
+\section{Prompt 3: Erweiterter Role-Prompt}
+
+\subsection{Rolle}
+
+Sie sind ein erfahrener Softwarearchitekt, Requirements Engineer und Senior Full-Stack-Entwickler. Sie sind spezialisiert auf datenbankgestützte Webanwendungen, Buchungs- und Reservierungssysteme, Hotelmanagementsysteme sowie die Entwicklung mit Python und Django.
+
+Entwickeln Sie ein professionelles technisches Konzept sowie eine prototypische Umsetzung für ein komplexes Buchungs- und Reservierungssystem.
+
+\subsection{Ausgangssituation}
+
+Es liegt ein Pflichtenheft für ein System zur Buchungs- und Reservierungsverwaltung raumähnlicher Ressourcen vor. Das System soll kleine Jugendherbergen, Pensionen und Hotels unterstützen. In einer zweiten Phase soll es an die speziellen Anforderungen der Passat in Travemünde angepasst werden.
+
+Das System wird als webbasiertes Client-Server-System umgesetzt. Die Benutzer greifen über einen Webbrowser auf die Anwendung zu. Die Anwendung läuft serverseitig und verwendet eine relationale Datenbank.
+
+\subsection{Zentrale technische Vorgabe}
+
+Die Implementierung muss mit Python und Django erfolgen. Das System muss als eigenständige vollständige Webseite umgesetzt werden und darf nicht auf dem Django-Admin-Interface basieren.
+
+Entwickeln Sie daher eine eigene Benutzeroberfläche mit:
+
+\begin{itemize}
+\item eigenen Django-Views
+\item eigenen Templates
+\item eigenen Forms
+\item eigener Navigation
+\item eigenem Dashboard
+\item eigenen Verwaltungsseiten
+\item eigenem Rollen- und Rechtekonzept
+\item eigener Kalender- und Belegungsansicht
+\end{itemize}
+
+Das Django-Model-View-Template-Prinzip ist konsequent anzuwenden.
+
+\subsection{Ziel}
+
+Entwerfen Sie ein vollständiges, aber prototypisch realisierbares System, das folgende Hauptbereiche abdeckt:
+
+\begin{itemize}
+\item Ressourcen- und Raumverwaltung
+\item Kundenverwaltung
+\item Buchungs- und Reservierungsverwaltung
+\item Belegungsmanagement
+\item Rechnungsstellung
+\item Kurabgabenberechnung
+\item Kalender- und Grundrissansichten
+\item To-Do-Management
+\item Benutzer- und Rechteverwaltung
+\item Statistische Auswertungen
+\item Aktivitätshistorie
+\end{itemize}
+
+\subsection{Fachliche Anforderungen}
+
+\subsubsection{Buchungs- und Vorgangsmanagement}
+
+Buchungsvorgänge sind als zentrale Entität zu modellieren. Ein Vorgang verbindet Kunde, Raum, Zeitraum, Bearbeiter, Personenanzahl und Status.
+
+Ein Vorgang muss mindestens folgende Status unterstützen:
+
+\begin{itemize}
+\item Option
+\item Reservierung
+\item Buchung
+\item Belegung
+\item Stornierung
+\item Nicht erschienen
+\item Tatsächlich genutzt
+\end{itemize}
+
+Für jeden Vorgang sollen Statusänderungen zeitlich gespeichert werden. Übergangszeitpunkte sollen manuell konfigurierbar sein. Wenn eine Option oder Reservierung abläuft, muss automatisch oder logisch eine Aufgabe in der To-Do-Liste erscheinen.
+
+Der Benutzer soll folgende Aktionen durchführen können:
+
+\begin{itemize}
+\item Vorgänge anlegen
+\item Vorgänge bearbeiten
+\item Vorgänge stornieren
+\item Kostenvoranschläge berechnen
+\item Erinnerungen anlegen
+\item Zusatzobjekte und Zusatzleistungen hinzufügen
+\item den Status eines Vorgangs ändern
+\item aus Kalender oder Belegungsübersicht neue Vorgänge starten
+\end{itemize}
+
+\subsubsection{Raum- und Ressourcenverwaltung}
+
+Das System muss Räume und Raumtypen verwalten.
+
+Ein Raum besitzt mindestens folgende Eigenschaften:
+
+\begin{itemize}
+\item Raum-ID
+\item Name
+\item Typ
+\item Personenplätze
+\item Angabe, ob Mehrfachbelegung möglich ist
+\item Preiskategorie
+\item Zusatzobjekte
+\item optionale Zuordnung zu Grundriss oder Etage
+\end{itemize}
+
+Ein Raumtyp besitzt:
+
+\begin{itemize}
+\item Name
+\item Beschreibung
+\end{itemize}
+
+Administratoren müssen Räume, Raumtypen, Zusatzobjekte und Zusatzleistungen anlegen, bearbeiten und löschen können.
+
+\subsubsection{Kundenverwaltung}
+
+Das System muss Kundendaten verwalten.
+
+Ein Kunde besitzt mindestens folgende Eigenschaften:
+
+\begin{itemize}
+\item Titel
+\item Anrede
+\item Vorname
+\item Nachname
+\item Adresse
+\item Kundentyp
+\item E-Mail
+\item Telefon
+\item Fax
+\item eindeutige Kundennummer
+\item Partner-ID
+\item Blacklist-Status
+\item Notizen
+\end{itemize}
+
+Das System soll bekannte Kunden bei neuen Buchungen wiederverwenden können. Beim Löschen eines Kunden muss das System warnen, dass zugehörige Daten ebenfalls betroffen sein können. Kunden können auf eine Blacklist gesetzt werden; bei neuen Vorgängen mit diesen Kunden muss eine Warnung angezeigt werden.
+
+\subsubsection{Rechnungsstellung}
+
+Das System soll aus Belegung, Buchung, Zusatzleistungen und Stornierungen einen Rechnungsvorschlag erzeugen.
+
+Der Rechnungsvorschlag enthält:
+
+\begin{itemize}
+\item Übernachtungen beziehungsweise Raumnutzung
+\item Zusatzobjekte
+\item Zusatzleistungen
+\item Stornoposten
+\item Kurabgabe
+\item Zu- und Abschläge
+\item Gesamtbetrag
+\end{itemize}
+
+Der Benutzer kann den Vorschlag manuell ändern. Es sollen Pauschalbeträge und prozentuale Auf- oder Abschläge möglich sein. Das System soll aus der fertigen Rechnung ein PDF in Briefform erzeugen. Die Rechnung wird gespeichert.
+
+Eine Rechnung enthält mindestens:
+
+\begin{itemize}
+\item Belegnummer, optional von MACH
+\item Rechnungsbetreff
+\item Rechnungsposten
+\item Rechnungsbetrag
+\item Rechnungsdatum
+\item Zahlungsfrist
+\item Bearbeiter
+\item PDF-Datei
+\end{itemize}
+
+Das System soll keine automatische Anbindung an das MACH-Kassensystem besitzen.
+
+\subsubsection{To-Do-Liste}
+
+Das System soll eine tagesaktuelle Aufgabenliste bereitstellen. Aufgaben entstehen unter anderem durch:
+
+\begin{itemize}
+\item abgelaufene Optionierungen
+\item abgelaufene Reservierungen
+\item fällige Erinnerungen
+\item zu erstellende Rechnungen
+\item notwendige Statusänderungen
+\end{itemize}
+
+Aufgaben sollen sortierbar sein nach:
+
+\begin{itemize}
+\item Art
+\item Priorität
+\item Fälligkeit
+\item Status
+\end{itemize}
+
+Fertig bearbeitete Aufgaben werden aus der aktiven Liste entfernt. Aus einer Aufgabe heraus soll der Benutzer direkt zum passenden Vorgang oder Objekt gelangen.
+
+\subsubsection{Kalender- und Belegungsmodul}
+
+Das System benötigt ein Kalendermodul mit Raum- und Zeitachsen.
+
+Die Kalenderansicht soll folgende Funktionen unterstützen:
+
+\begin{itemize}
+\item Tagesansicht
+\item Wochenansicht
+\item Monatsansicht
+\item Jahresansicht
+\item Raumachsen
+\item Zeitachsen
+\item Tausch von Zeilen und Spalten
+\item farbliche Markierung verschiedener Vorgangstypen
+\item Anlegen und Bearbeiten von Buchungen direkt aus dem Kalender
+\end{itemize}
+
+Zusätzlich soll eine Belegungsübersicht existieren, die aktuelle Raumbelegungen anzeigt. Optional soll ein Grundriss oder eine Etagenansicht verwendet werden. Freie Räume sollen aus dieser Ansicht heraus direkt belegbar sein.
+
+\subsubsection{Dynamischer Preiskatalog}
+
+Das System muss zeitabhängige Preise unterstützen. Preise sollen abhängig sein von:
+
+\begin{itemize}
+\item Raumtyp
+\item Preiskategorie
+\item Saison
+\item Zeitraum
+\item Zusatzleistungen
+\item Zusatzobjekten
+\end{itemize}
+
+Administratoren können Preiskategorien anlegen und Preise bearbeiten.
+
+\subsubsection{Rollen- und Rechtesystem}
+
+Das System muss eine Anmeldung besitzen und verschiedene Rollen unterstützen. Für das Passat-System sind mindestens folgende Rollen vorgesehen:
+
+\begin{itemize}
+\item Administrator
+\item Verwaltungsmitarbeiter
+\item Mitarbeiter vor Ort
+\item Hafenmeister
+\end{itemize}
+
+Alle relevanten Aktionen sollen Rechte besitzen, die Rollen zugeordnet werden können.
+
+Beispiele für solche Aktionen sind:
+
+\begin{itemize}
+\item Kunde anlegen
+\item Kunde bearbeiten
+\item Kunde löschen
+\item Raum anlegen
+\item Raum bearbeiten
+\item Buchung anlegen
+\item Buchung stornieren
+\item Rechnung erzeugen
+\item Preise bearbeiten
+\item Benutzer verwalten
+\item Auswertungen anzeigen
+\end{itemize}
+
+\subsubsection{Mehrbenutzerbetrieb und verteilte Nutzung}
+
+Das System läuft auf einem Server und kann von mehreren Benutzern gleichzeitig über Webbrowser genutzt werden.
+
+Dabei sind folgende Aspekte zu berücksichtigen:
+
+\begin{itemize}
+\item gleichzeitige Nutzung
+\item Sperrung kritischer Datensätze
+\item Warnung bei paralleler Bearbeitung
+\item Transaktionen
+\item rollenbasierte Zugriffskontrolle
+\item sichere Anmeldung
+\end{itemize}
+
+\subsubsection{Konfigurierbarer Buchungsablauf}
+
+Administratoren sollen die Schritte eines Buchungsprozesses konfigurieren können. Ein Buchungsablauf besteht aus mehreren Schritten, zum Beispiel:
+
+\begin{itemize}
+\item Kundendaten erfassen
+\item Raum auswählen
+\item Zeitraum wählen
+\item Zusatzleistungen wählen
+\item Preis berechnen
+\item Bestätigung erzeugen
+\item Rechnung vorbereiten
+\end{itemize}
+
+Für jeden Schritt sollen erforderliche Kundendaten oder Pflichtfelder definiert werden können. Optional soll der Buchungsvorgang als Checkliste dargestellt werden.
+
+\subsubsection{Kurabgabe}
+
+Das System soll anhand der Belegung berechnen, wie viele Personen kurabgabepflichtig sind. Daraus soll eine Kurabgabe berechnet und als PDF-Rechnung ausgegeben werden können.
+
+\subsubsection{Statistik und Auswertung}
+
+Das System soll grafische und tabellarische Auswertungen bereitstellen. Mindestens folgende Auswertungen sollen möglich sein:
+
+\begin{itemize}
+\item Übernachtungen pro Raum und Zeitraum
+\item Gesamtübernachtungen pro Betrieb und Zeitraum
+\item Anzahl stornierter Buchungen
+\item Zeitpunkt stornierter Buchungen
+\item Einnahmen pro Kunde
+\item Einnahmen pro Raum
+\item Einnahmen gesamt
+\item Einnahmen pro Zeitraum
+\item Einnahmen nach Quelle
+\end{itemize}
+
+\subsubsection{Aktivitätshistorie}
+
+Alle wichtigen Benutzeraktionen sollen protokolliert werden.
+
+Ein Eintrag enthält:
+
+\begin{itemize}
+\item Benutzer
+\item Zeitpunkt
+\item Aktion
+\item betroffenes Objekt
+\item Beschreibung
+\item alter Wert
+\item neuer Wert
+\end{itemize}
+
+Optional kann das Command-Pattern berücksichtigt werden, um Aktionen nachvollziehbar oder rückgängig machbar zu machen.
+
+\subsubsection{Allgemeine Anforderungen}
+
+Das System soll außerdem folgende Aspekte unterstützen:
+
+\begin{itemize}
+\item Notizen zu verschiedenen Objekten
+\item Permanent-Links beziehungsweise Permanent-URIs, soweit möglich
+\item verschlüsselte Übertragung beziehungsweise Hinweise zur Sicherheit
+\item benutzerfreundliches Webinterface
+\item spätere Erweiterbarkeit
+\item optionale Mehrsprachigkeit
+\item optionaler E-Mail-Versand
+\item optionale Benutzerkonfiguration der Oberfläche
+\end{itemize}
+
+\subsection{Erwartete Ausgabe}
+
+Die Antwort soll professionell und ausführlich sein und folgende Struktur besitzen:
+
+\begin{enumerate}
+\item Zusammenfassung des Systems
+\item Fachliche Modulaufteilung
+\item Technische Architektur mit Django-MVT
+\item Django-Projektstruktur
+\item Datenmodell mit vollständigen Django-Models
+\item Beziehungen zwischen den Models
+\item Rollen- und Rechtekonzept
+\item Buchungsprozess mit Statusübergängen
+\item Rechnungsprozess inklusive PDF-Erzeugung
+\item Kalender- und Belegungslogik
+\item To-Do-Logik
+\item Statistische Auswertungen
+\item Aktivitätshistorie
+\item Beispielhafte Views
+\item Beispielhafte Forms
+\item Beispielhafte Templates
+\item URL-Struktur
+\item Hinweise zur eigenen Webseite ohne Django Admin
+\item Sicherheits- und Mehrbenutzeraspekte
+\item Vorschläge für spätere Erweiterungen
+\end{enumerate}
+
+Die Antwort soll nicht nur theoretisch sein, sondern direkt als Grundlage für eine Django-Implementierung dienen. Es ist verständlicher, strukturierter und kommentierter Beispielcode zu verwenden.
+
+Wichtige Einschränkung: Die Lösung darf nicht auf dem Django-Admin-Interface aufbauen. Das System muss eine vollständig eigene Webseite mit eigener Benutzeroberfläche besitzen.

@@ -1,0 +1,78 @@
+\subsection{GPT-5.2 mit Basis-Prompt}
+Die Ergebnisse zeigen, dass das Modell zwar grundlegende funktionale Komponenten generieren konnte, jedoch erhebliche Defizite in den technischen, Integrationkriterien aufweist. Die Analyse verdeutlicht somit den starken Einfluss der Prompt-Qualität auf die Vollständigkeit und Qualität KI-generierter Softwaresysteme. Das erste Experiment dient daher als Baseline für die nachfolgenden Experimente mit stärker strukturierten und erweiterten Prompt-Strategien.
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Ergebnisse von GPT-5.2 mit Basis-Prompt} 
+\label{tab:gptV1} 
+
+\renewcommand{\arraystretch}{1.15}
+%\scalebox{0.9}{
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Evaluationskriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 1 &
+Grundlegende Benutzeroberfläche, Formulare und Authentifizierung vorhanden. Erweiterte Funktionen wie Filterung, Pagination sowie vollständige CRUD-Operationen fehlen teilweise. \\
+Geschäftsobjekte und CRUD-Funktionalität & 1 &
+\textit{\textit{Customers, Orders, Rooms, Tasks und Invoices}} wurden teilweise umgesetzt. Mehrere Module besitzen jedoch keine vollständige CRUD-Funktionalität. \\
+Erweiterte Domänenfunktionen & 0 &
+\textit{\textit{\textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}}}} wurden nicht oder nur unvollständig implementiert. \\
+Benutzer- und Rechteverwaltung & 1 &
+Benutzer- und Rollenmodelle sind vorhanden, jedoch fehlt eine vollständige Rechteverwaltung und Autorisierung. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Modell-Validierungen und Geschäftslogik & 0 &
+Modell-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechanismen wurden nicht ausreichend umgesetzt. \\
+Unit-Tests & 0 &
+Es wurden keine automatisierten Unit-Tests generiert. \\
+Codequalität und Wartbarkeit & 0 &
+Die technische Struktur enthält keine nachweisbaren Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Frontend-Backend-Integration & 1 &
+Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind vorhanden. Komplexe Workflows wurden jedoch nicht vollständig umgesetzt. \\
+End-to-End-Workflows & 0 &
+Keine vollständigen Benutzerabläufe oder automatisierten Integrationstests vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
+\addlinespace[0.2em]
+Erreichte Gesamtpunktzahl & 4 / 18 &
+Das generierte System erreicht vier von 18 möglichen Bewertungspunkten und erfüllt damit etwa 22,2\% der definierten Evaluationskriterien. \\
+\bottomrule
+\end{tabularx}
+%}
+\end{table}
+
+\newpage
+Die zusammengefassten Ergebnisse verdeutlichen, dass ein einfacher Basis-Prompt
+zwar zur Generierung grundlegender Softwarestrukturen ausreicht, jedoch keine vollständigen und qualitativ hochwertigen Softwaresysteme erzeugt.
+Insbesondere einfache CRUD-Funktionalitäten sowie grundlegende Benutzeroberflächen konnten generiert werden. Komplexere Aspekte professioneller Softwareentwicklung, beispielsweise automatisierte Tests, konsistente Geschäftslogik, vollständige REST-Architekturen sowie Integrations- und Performance-Mechanismen, wurden
+dagegen kaum oder gar nicht umgesetzt.
+
+Die detaillierte Analyse zeigt, dass die wesentlichen Kernfunktionen des Systems
+grundsätzlich umgesetzt wurden. Insbesondere die Verwaltung von Kunden, Bestel-
+lungen, Räumen, Rechnungen und Aufgaben ist vorhanden. Defizite bestehen jedoch
+bei mehreren erweiterten Domänenfunktionen wie Services, Occupancy Items, Kom
+mentaren sowie der Verwaltung von Raumstandorten und Preisstrukturen.
+
+
+Die zusammengefasste Bewertung verdeutlicht, dass die grundlegenden funktionalen Anforderungen überwiegend erfüllt wurden. Die Ergebnisse zeigen jedoch ebenfalls,
+dass insbesondere spezialisierte Fachfunktionen und weiterführende Geschäftspro-
+zesse noch nicht vollständig implementiert sind. Dadurch ergibt sich insgesamt ein
+funktional nutzbares System mit deutlichem Verbesserungspotenzial hinsichtlich der
+fachlichen Vollständigkeit.
+
+Da die Ausführbarkeit eines Softwaresystems eine grundlegende Voraussetzung für dessen Einsatzfähigkeit darstellt, ist dieser Fehler als kritisch einzustufen. Die fehlende Startfähigkeit verhinderte zudem eine umfassende Evaluierung der implementierten Funktionalitäten und schränkte die weitere Analyse der Software erheblich ein.
+
+Darüber hinaus zeigte die Untersuchung, dass das Modell lediglich einen einzelnen Service mit der Bezeichnung "Booking" generierte. Neben diesem Service wurden die zugehörigen HTML-Templates sowie die entsprechenden Datenmodelle erstellt. Weitere für die vollständige Umsetzung der Anforderungen notwendige Komponenten, wie zusätzliche Services, Geschäftslogik oder Integrationsschnittstellen, konnten nicht identifiziert werden. Dies deutet darauf hin, dass das Modell zwar in der Lage ist, grundlegende Softwareartefakte zu erzeugen, jedoch Schwierigkeiten bei der Generierung einer vollständigen und lauffähigen Systemarchitektur aufweist.
+
+Insgesamt verdeutlichen die Ergebnisse, dass ein einfacher Basis-Prompt für die Generierung
+grundlegender Softwarestrukturen ausreicht, jedoch keine vollständige Umsetzung komplexer Anforderungen ermöglicht.
+Insgesamt erreichte GPT-5.2 mit dem Basis-Prompt vier von 18 möglichen Bewertungspunkten.

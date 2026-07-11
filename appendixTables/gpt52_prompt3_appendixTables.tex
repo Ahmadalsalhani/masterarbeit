@@ -1,0 +1,174 @@
+%!TEX root = ../thesis.tex
+\section{Detaillierte Ergebnisse für GPT-5.2 mit Rollendefinition}
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Detaillierte Ergebnisse der funktionalen Kriterien\\(GPT-P3-Funktional)}
+\label{tab:functional_detail_evaluation_gpt52_prompt3_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität & 1 &
+Strukturierte Datenformate mit HTML und Formularen teilweise vollständig. \\
+Session- und Login-Management & 2 &
+Session-Login und Authentifizierung vollständig implementiert. \\
+Customer-Verwaltung & 1 &
+CRUD-Funktionalitäten teilweise vorhanden. Customer Profiles können im Frontend nicht verwaltet werden. \\
+Bestellverwaltung (Bookings) & 1 &
+bookings App in backend erstellt, CRUD Funktionalität vorhanden, kann noch nicht vollständig genutzt werden. \\
+Order Items & 0 &
+REST-Routen und CRUD-Operationen nicht implementiert. \\
+Raumverwaltung (Rooms) & 0 &
+keine Verwaltung von Räumen mit Schutzregeln. \\
+Room Types & 0 &
+keine Raumtypen unterstützt. \\
+Room Locations & 0 &
+keine Raumorte mit optionaler Sortierung unterstützt. \\
+Services & 0 &
+keine Serviceverwaltung vorhanden. \\
+Preise, Preiskategorien und Saisons & 1 &
+Unvollständig mit Preisregeln und Saison-Management. \\
+Occupancies & 0 &
+keine Occupancy-Verwaltung vorhanden. \\
+Occupancy Items & 0 &
+Keine Einträge mit optionaler Sortierung vollständig. \\
+Rechnungen (Invoices) & 1 &
+Unvollständige Rechnungsfunktionen. Keine Generierung von Rechnungen vorhanden. \\
+Invoice Items & 0 &
+keine Implementierung mit Sortierung. \\
+Tasks & 0 &
+keine Task-Verwaltung vorhanden. \\
+Kommentare (Comments) & 0 &
+keine Kommentarverwaltung vorhanden. \\
+Benutzer, Gruppen und Berechtigungen & 0 &
+Benutzer- und Rollenmodell mit Gruppen und Berechtigungen nicht vorhanden. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Funktionale Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 7 / 34 &
+Das System erfüllt alle definierten funktionalen Kriterien vollständig. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der technischen Kriterien\\(GPT-P3-Technik)}
+\label{tab:technical_detail_evaluation_gpt52_prompt3_appendix}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+HTTP-Statuscodes & 1 &
+Implementiert, aber nicht vollständig getestet. \\
+Datenbankzustände & 1 &
+Constraints vorhanden, systematische Tests fehlen. \\
+API-Antworten mit erwarteten Daten & 1 &
+Serializers vorhanden, Tests fehlen. \\
+Fehler- und Ausnahmefälle & 0 &
+Keine automatisierten Tests für Fehlerszenarien. \\
+Verschachtelte Ressourcen & 2 &
+Actions und Filter vollständig funktionsfähig. \\
+Geschäftsregeln der Modelle & 1 &
+Einige Regeln implementiert (Delete-Schutz). \\
+Realistische Testdaten & 0 &
+Keine Seed-Daten oder Fixtures vorhanden. \\
+Erfolgreiche sowie ungültige Fälle & 0 &
+Keine automatisierte Testsuite vorhanden. \\
+Listenansichten mit Sortierfunktion & 0 &
+Ordering auf allen ViewSets nicht implementiert. \\
+Filter- und Suchfunktionen & 0 &
+keine Search und Filterset-Fields konfiguriert. \\
+Pagination für große Datenmengen & 0 &
+Standard-Pagination nicht aktiv. \\
+Dynamische Seitengröße und Navigation & 0 &
+keine page\_size-Parameter aktiviert. \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 6 / 24 &
+Das System erfüllt grundlegende technische Anforderungen, systematische Tests fehlen jedoch. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Detaillierte Ergebnisse der Integrationskriterien\\(GPT-P3-Integration)}
+\label{tab:integrity_detail_evaluation_GPT5.2_prompt3}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{4.5cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+\textbf{Kriterium} & \textbf{Wert} & \textbf{Beobachtung} \\
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Allgemeine Funktionalität (Integration) & 1 &
+Frontend ist unvollständig mit Backend integriert. \\
+Frontend $\leftrightarrow$ Backend & 0 &
+Formulare und Benutzerinteraktionen werden nicht an die REST-API übertragen und verarbeitet. \\
+
+REST-API $\leftrightarrow$ Datenbank & 2 &
+CRUD-Operationen werden erfolgreich persistiert und Änderungen korrekt gespeichert. \\
+
+Authentifizierung $\leftrightarrow$ API & 2 &
+Geschützte API-Endpunkte sind nach erfolgreichem Login erreichbar; unautorisierte Zugriffe werden blockiert. \\
+
+Booking $\leftrightarrow$ Invoice & 2 &
+Bei der Erstellung einer Buchung wird automatisch eine zugehörige Rechnung erzeugt. \\
+
+Room $\leftrightarrow$ Booking & 2 &
+Es können ausschließlich verfügbare Zimmer gebucht werden; Belegungen werden berücksichtigt. \\
+
+User $\leftrightarrow$ Rollen & 0 &
+Benutzerrollen sind nicht implementiert. \\
+
+HTML-Templates $\leftrightarrow$ Backend & 2 &
+im Backend-Daten befindet sich in vollständigen HTML-Templates . \\
+
+API $\leftrightarrow$ Serializer $\leftrightarrow$ Datenbank & 2 &
+Daten werden korrekt serialisiert, validiert und dauerhaft in der Datenbank gespeichert. \\
+
+\midrule
+\multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
+\addlinespace[0.2em]
+Erreichte Punktzahl & 13 / 18 &
+Das System erfüllt den Großteil der integrativen Kriterien; End-to-End-Workflows sind funktional. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\newpage
+\begin{table}[H]
+\centering
+\small
+\caption{Gesamtübersicht der Bewertungsergebnisse}
+\label{tab:detailed_summary_gpt52_prompt3}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}X >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.0cm}@{}}
+\toprule
+\textbf{Kategorie} & \textbf{Erreicht} & \textbf{Maximal} & \textbf{Erfüllung} \\
+\midrule
+Funktionale Kriterien & 7 & 34 & 20,59\% \\
+Technische Kriterien & 6 & 24 & 25\% \\
+Integrationskriterien & 13 & 18 & 72,22\% \\
+\midrule
+\textbf{GESAMTERGEBNIS} & \textbf{26} & \textbf{76} & \textbf{34,21\%} \\
+\bottomrule
+\end{tabularx}
+\end{table}

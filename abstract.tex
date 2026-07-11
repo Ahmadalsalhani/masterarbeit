@@ -1,0 +1,33 @@
+%!TEX root = thesis.tex
+
+\cleardoublepage
+\thispagestyle{plain}
+
+\pdfbookmark{Kurzfassung}{kurzfassung}
+\paragraph{Kurzfassung}\mbox{}\\
+
+
+
+Die zunehmende Leistungsfähigkeit großer Sprachmodelle \textit{(Large Language Models, LLMs)} eröffnet neue Möglichkeiten für die automatisierte Softwareentwicklung. Die Qualität der erzeugten \textit{Software} hängt jedoch sowohl von der Leistungsfähigkeit des verwendeten Sprachmodells als auch von der Gestaltung der eingesetzten Prompts ab.
+
+Ziel dieser Arbeit war die Untersuchung des Einflusses verschiedener Prompt-Strategien und LLMs auf die Qualität automatisch generierter Softwaresysteme.
+Als Fallstudie diente das bestehende Softwaresystem \textit{Passat}, ein internes Buchungssystem zur Verwaltung von Gästen, Ressourcen und Buchungen auf einem Schiff zu verwalten. Das Benutzerhandbuch sowie die funktionalen Anforderungen des Systems wurden als Eingabe für drei verschiedene Prompt-Varianten verwendet: einen einfachen \textit{Basis-Prompt}, einen \textit{strukturierten Prompt} mit \textit{Kontextinformationen} sowie einen erweiterten Prompt mit zusätzlicher \textit{Rollendefinition}. Diese wurden mit den drei Sprachmodellen GPT-5.2, Gemini 3.1 Pro und GPT-5.3-Codex kombiniert, sodass insgesamt neun Experimente durchgeführt wurden. Die generierten Softwaresysteme wurden anhand definierter Evaluationskriterien hinsichtlich Funktionale Kriterien, Technische Kriterien und Integrationskriterien bewertet.
+
+
+Die Ergebnisse zeigen, dass strukturierte Prompts die Qualität der erzeugten Software deutlich verbessern und der Einsatz einer Rollendefinition die besten Resultate liefert. Darüber hinaus erzielte das Modell GPT-5.3-Codex die höchste Gesamtbewertung und generierte im Vergleich zu den übrigen Modellen die vollständigsten und funktionalsten Softwaresysteme. Die Untersuchung verdeutlicht, dass sowohl die Qualität des Prompt Engineerings als auch die Leistungsfähigkeit des eingesetzten Sprachmodells einen entscheidenden Einfluss auf die automatisierte Generierung von Softwaresystemen besitzen. Die gewonnenen Erkenntnisse liefern praktische Empfehlungen für den Einsatz großer Sprachmodelle in der Softwareentwicklung und bilden eine Grundlage für weiterführende Forschungsarbeiten im Bereich der KI-gestützten Softwaregenerierung.
+
+\cleardoublepage
+\thispagestyle{plain}
+
+\foreignlanguage{english}{%
+\pdfbookmark{Abstract}{abstract}
+\paragraph{Abstract}\mbox{}\\
+
+The increasing capabilities of Large Language Models (LLMs) have opened new opportunities for automated software development. However, the quality of the generated software depends not only on the capabilities of the selected language model but also on the design of the prompts used to guide the generation process.
+
+The objective of this thesis was to investigate the influence of different prompt engineering strategies and LLMs on the quality of automatically generated software systems.
+The existing software system *Passat*, an internal booking system for managing guests, resources, and reservations on a ship, was used as the case study. The system's user manual and functional requirements served as input for three different prompt variants: a basic prompt, a structured prompt with contextual information, and an extended prompt incorporating role prompting. These prompt variants were combined with three different language models—GPT, Gemini, and GPT-5.3-Codex—resulting in a total of nine experiments. The generated software systems were evaluated using predefined evaluation criteria, including completeness, functionality, code quality, and the integration between the frontend and backend components.
+
+The results demonstrate that structured prompts significantly improve the quality of the generated software and that the prompt incorporating role prompting achieved the best overall performance. Furthermore, the GPT-5.3-Codex model produced the highest-quality software systems, achieving the greatest degree of completeness, functionality, and consistency among the evaluated models. The findings indicate that both prompt engineering and the capabilities of the underlying language model have a significant impact on the quality of AI-generated software systems. The outcomes of this study provide practical recommendations for the application of LLMs in software development and establish a foundation for future research on AI-assisted software engineering.
+
+}
