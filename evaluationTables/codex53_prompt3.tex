@@ -24,7 +24,7 @@ Geschäftsobjekte und CRUD-Funktionalität & 2 &
 Erweiterte Domänenfunktionen & 2 &
 \textit{\textit{Order Items, Occupancy Items, Services, Kommentare und Room Locations}} wurden vollständig implementiert. \\
 Benutzer- und Rechteverwaltung & 2 &
-Benutzer- und Rollenmodelle sind nicht vorhanden, jedoch fehlt eine vollständige Rechteverwaltung und Autorisierung. \\
+Benutzer- und Rollenmodelle sind nicht vorhanden. \\
 \midrule
 \multicolumn{3}{@{}l@{}}{\textbf{Technische Kriterien}} \\
 \addlinespace[0.2em]
@@ -33,14 +33,14 @@ Modell-Validierungen, Geschäftsregeln und technische Qualitätssicherungsmechan
 Unit-Tests & 2 &
 Es wurden automatisierte Unit-Tests generiert. \\
 Codequalität und Wartbarkeit & 2 &
-Die technische Struktur enthält keine nachweisbaren Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
+Die technische Struktur enthält nachweisbaren Mechanismen zur Qualitätssicherung oder Testbarkeit. \\
 \midrule
 \multicolumn{3}{@{}l@{}}{\textbf{Integrationskriterien}} \\
 \addlinespace[0.2em]
 Frontend-Backend-Integration & 1 &
 Grundlegende Interaktionen zwischen Benutzeroberfläche und Backend sind teilweise vorhanden. Komplexe Workflows wurden jedoch nicht vollständig umgesetzt. \\
 End-to-End-Workflows & 1 &
-Keine vollständigen Benutzerabläufe oder automatisierten Integrationstests teilweise vorhanden. \\
+Benutzerabläufe oder automatisierten Integrationstests teilweise vorhanden. \\
 \midrule
 \multicolumn{3}{@{}l@{}}{\textbf{Gesamtergebnis}} \\
 \addlinespace[0.2em]
@@ -58,7 +58,7 @@ Der vorgesehene Workflow umfasst mehrere aufeinanderfolgende Schritte, darunter 
 Während die einzelnen Zwischenschritte grundsätzlich durchlaufen werden konnten, war ein erfolgreicher Abschluss des Prozesses nicht möglich. Insbesondere im letzten Schritt der Zusammenfassung konnte der Vorgang nicht gespeichert werden, sodass keine vollständige Buchung erzeugt wurde.
 Die Ergebnisse deuten darauf hin, dass das Modelll zwar in der Lage war, die grundlegende Struktur mehrstufiger Geschäftsprozesse zu generieren, jedoch Schwierigkeiten bei der konsistenten Implementierung komplexer Abläufe und deren abschließender Persistierung aufweist. Insbesondere die Verarbeitung mehrstufiger Workflows mit mehreren abhängigen Entitäten konnte nicht vollständig umgesetzt werden.
 Die Löschoperation eines Kundendatensatzes führte während der Ausführung zu einem \texttt{ProtectedError}. Die anschließende Analyse ergab jedoch, dass es sich hierbei nicht um einen Implementierungsfehler der Geschäftslogik handelte. Vielmehr war die zugrunde liegende Funktionalität korrekt umgesetzt. Durch die Verwendung der Django-Konfiguration \texttt{on\_delete=models.PROTECT} wurde sichergestellt, dass Kundendatensätze nicht gelöscht werden können, solange sie noch von anderen Systemkomponenten referenziert werden. Im vorliegenden Fall bestand eine Referenz zwischen dem Kunden und einem Datensatz des Modells \texttt{OccupancyLog}. Die Verhinderung der Löschoperation entspricht den Anforderungen zur Wahrung der referenziellen Integrität und dient der Vermeidung inkonsistenter Datenbestände.
-Verbesserungspotenzial zeigte sich jedoch in der Behandlung dieser Situation auf Ebene der Benutzerschnittstelle. Anstatt dem Benutzer eine verständliche und fachlich formulierte Meldung anzuzeigen, wurde die technische Ausnahme des Frameworks direkt ausgegeben. Aus Sicht der Benutzerfreundlichkeit wäre eine anwendungsbezogene Fehlermeldung, die den Grund der fehlgeschlagenen Löschoperation erläutert, vorzuziehen. Der Vorfall stellt somit keinen funktionalen Fehler der KI-generierten Implementierung dar, sondern eine Schwäche in der Fehlerbehandlung und Benutzerführung.
+Verbesserungspotenzial zeigte sich jedoch in der Behandlung dieser Situation auf Ebene der Benutzerschnittstelle. Anstatt dem Benutzer eine verständliche und fachlich formulierte Meldung anzuzeigen, wurde die technische Ausnahme des Frameworks direkt ausgegeben. Aus Sicht der Benutzerfreundlichkeit wäre eine anwendungsbezogene Fehlermeldung vorzuziehen, die den Grund der fehlgeschlagenen Löschoperation erläutert. Der Vorfall stellt somit keinen funktionalen Fehler der KI-generierten Implementierung dar, sondern eine Schwäche in der Fehlerbehandlung und Benutzerführung.
 
 Im Rahmen der Evaluation der KI-generierten Hotelverwaltungsanwendung wurde ein Fehler im Modul zur Rechnungsverwaltung festgestellt. Nach der Erstellung einer neuen Rechnung und dem Auslösen des Speichervorgangs trat während des Renderns der Rechnungsübersicht ein Laufzeitfehler auf. Django meldete dabei die Fehlermeldung \textit{``Reverse for 'invoice\_update' not found''}. Diese Meldung weist darauf hin, dass im Frontend-Template eine URL mit dem Namen \texttt{invoice\_update} referenziert wurde, für die jedoch keine entsprechende Definition im URL-Routing des Systems vorhanden war.
 Die Ursache des Problems lag in einer Inkonsistenz zwischen den verschiedenen Schichten der Anwendung. Während das Template der Rechnungsübersicht davon ausging, dass eine Funktion zur Bearbeitung bestehender Rechnungen existiert, war entweder die zugehörige URL-Konfiguration oder die entsprechende View nicht implementiert. Dadurch konnte Django die angeforderte URL beim Rendern der Seite nicht auflösen und brach die Verarbeitung mit einer Ausnahme ab.

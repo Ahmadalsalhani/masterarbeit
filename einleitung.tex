@@ -13,7 +13,6 @@ Allerdings ist bislang nur begrenzt untersucht worden, in welchem Umfang LLM-bas
 Vor diesem Hintergrund untersucht diese Arbeit, inwiefern LLMs zur Unterstützung des Reengineerings bestehender Softwaresysteme eingesetzt werden können. Dabei wird analysiert, ob und in welchem Umfang LLMs dazu beitragen können, neue Systeme zu entwickeln, die die gleichen funktionalen Anforderungen und architektonischen Eigenschaften wie bestehende Systeme erfüllen.
 \section{Problemstellung}
 Viele Organisationen betreiben sogenannte Legacy-Systeme, die über viele Jahre hinweg entwickelt wurden und zentrale Geschäftsprozesse unterstützen \cite{sommerville2016software}. 
-
 Die Modernisierung solcher Systeme stellt eine große Herausforderung 
 im Software Engineering dar, da Legacy-Systeme häufig komplexe 
 Abhängigkeiten und unzureichende Dokumentationen aufweisen 
@@ -22,32 +21,17 @@ Ein möglicher Ansatz zur Modernisierung ist das sogenannte
 Softwarereengineering, bei dem bestehende Systeme analysiert 
 und neu strukturiert werden, während ihre funktionalen 
 Anforderungen erhalten bleiben \cite{chikofsky1990reverse}. 
-
 Mit dem Aufkommen von LLMs eröffnen sich neue 
 Möglichkeiten zur Unterstützung solcher Prozesse, beispielsweise 
 durch automatisierte Codeanalyse oder Codegenerierung 
-\cite{fan2023largelanguagemodelssoftware}. Daraus ergibt sich die zentrale Forschungsfrage für diese Arbeit:\\
-\textbf{Wie effektiv kann die Evaluation von LLMs in der Modernisierung von Legacy-Systemen im Rahmen des Software Re-Engineering unterstützen?}
+\cite{fan2023largelanguagemodelssoftware}.
+Aktuelle Studien zeigen, dass Large Language Models in der Lage sind, Programm-codes auf Grundlage natürlicher Sprachbeschreibungen zu erzeugen \cite{chen2021evaluatinglargelanguagemodels}. Darüber hinaus werden LLMs zunehmend in verschiedenen Bereichen des Software Engineering eingesetzt,  beispielsweise zur Codeerstellung, Softwareanalyse oder Dokumentation \cite{LLMinSEreviewandvision}.
 
-\section{Ziel der Arbeit}
-
-
-Es soll analysiert werden, inwieweit LLM-basierte Ansätze dazu beitragen können, Legacy-Softwaresysteme neu zu implementieren oder zu modernisieren, während die ursprünglichen funktionalen Anforderungen und Spezifikationen erhalten bleiben.
-
-Diese Eigenschaften eröffnen neue Möglichkeiten für die Unterstützung von Softwareentwicklungsprozessen, insbesondere im Bereich der Codegenerierung und Systemrekonstruktion.
-
-Vor diesem Hintergrund untersucht die vorliegende Arbeit, inwieweit verschiedene Large Language Modells (LLMs) zur Unterstützung des Reengineerings bestehender Systeme eingesetzt werden können und welche Stärken und Grenzen diese Modelle im Kontext der Modernisierung von Legacy-Systemen aufweisen.
-
-\section{Fragestellung}
-Ausgehend von der beschriebenen Problemstellung ergibt sich die zentrale Forschungsfrage dieser Arbeit:
-
+In dieser Arbeit wird untersucht: 
 \textit{Inwieweit unterscheiden sich verschiedene Large Language 
 Models hinsichtlich ihrer Fähigkeit, einen Programmcode zu erzeugen, 
 der die funktionalen Anforderungen eines bestehenden Systems erfüllt?}
 
-Aktuelle Studien zeigen, dass Large Language Models in der Lage sind, Programm-codes auf Grundlage natürlicher Sprachbeschreibungen zu erzeugen \cite{chen2021evaluatinglargelanguagemodels}. Darüber hinaus werden LLMs zunehmend in verschiedenen Bereichen des Software Engineering eingesetzt,  beispielsweise zur Codeerstellung, Softwareanalyse oder Dokumentation \cite{LLMinSEreviewandvision}
 
-Gleichzeitig spielt das sogenannte Prompt Engineering eine wichtige Rolle bei der Steuerung der von LLMs generierten Ergebnisse, da die Formulierung der Eingabeaufforderung einen erheblichen Einfluss auf die Qualität der Ausgabe haben kann \cite{reynolds2021promptprogramminglargelanguage}.
-
-Diese Arbeit untersucht, wie sich die Ausgaben verschiedener LLM-Modelle hinsichtlich ihrer Funktionalität 
-bei der Codeerstellung unterscheiden. Als Anwendungsfall dient die Generierung eines webbasierten Buchungssystems.
+Das sogenannte Prompt-Engineering spielt eine wichtige Rolle bei der Steuerung der von LLMs generierten Ergebnisse, da die Formulierung der Eingabeaufforderung einen erheblichen Einfluss auf die Qualität der Ausgabe haben kann \cite{reynolds2021promptprogramminglargelanguage}.
+Daher ist ein weiterer Aspekt dieser Arbeit die Untersuchung verschiedener Prompt-Strategien auf die Qualität und Funktionalität der Code-Erstellung. Als Anwendungsfall dient die Generierung eines webbasierten Buchungssystems.
