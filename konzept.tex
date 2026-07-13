@@ -1,7 +1,7 @@
 \chapter{Methodik und experimentelles Vorgehen}
 \label{Methode und Experemente}
 \section{Ausgangssystem (Legacy-System \textit{Passat})}
-Als Fallstudie für die experimentelle Untersuchung wurde das Legacy-System \textit{Passat} verwendet. Es handelt sich um ein internes webbasiertes
+Als Fallstudie für die experimentelle Untersuchung wurde das Legacy-System \textit{Passat} verwendet. Unter Legacy-System wird weiterhin eingesetztes Softwaresystem verstanden, die auf technisch veralteten Technologien oder Architekturen basieren und geschäftskritische Funktionen erfüllt. Es handelt sich beim \textit{Passat} um ein internes webbasiertes
 Buchungs- und Reservierungssystem, das zur Verwaltung
 raumähnlicher Ressourcen in kleinen Hotels oder Pensionen
 entwickelt wurde.
@@ -14,7 +14,7 @@ der aktuellen Raumbelegung und einen dynamischen
 Preiskatalog zur Verwaltung zeitabhängiger Preise. Zusätzlich
 unterstützt das System verschiedene Nutzerrollen und
 Rechtestrukturen, wodurch unterschiedliche Benutzergruppen
-verschiedene Funktionen des Systems nutzen können. \textit{Passat} wurde mit der Framework "Ruby on Rails"entwickelt und ist 
+verschiedene Funktionen des Systems nutzen können. \textit{Passat} wurde mit der Framework "Ruby on Rails" entwickelt und ist 
  und ist auf das Software Architekturmuster \textit{Model View Template (MVT)} basiert. Aufgrund seiner klar definierten Anforderungen, seiner
 umfangreichen Funktionalitäten sowie der vorhandenen
 Dokumentation eignet sich das System \textit{Passat} als geeignete
@@ -190,7 +190,7 @@ unterschiedlichem Komplexitätsgrad definiert (siehe Anhang):
 
 Ziel ist es, den Einfluss der Promptstruktur auf die
 Qualität der generierten Systeme zu analysieren. Die vollständigen und tatsächlich verwendeten Prompts zur
-Generierung der Softwaresysteme sind aus Gründen der
+Erstellung der Softwaresysteme sind aus Gründen der
 Nachvollziehbarkeit im Anhang dokumentiert.
 
 
@@ -220,12 +220,12 @@ Durch die Kombination dieser drei Modelle wird sowohl eine breite Abdeckung allg
 
 Die Durchführung der Experimente erfolgte in mehreren
 Schritten. Zunächst wurden die definierten Prompts in die
-jeweiligen LLM-Systeme eingegeben, um ein vollständiges
-Softwaresystem zu generieren. Der generierte Code wurde anschließend lokal gespeichert
+jeweiligen Modelle erstellen, um ein vollständige
+Softwaresysteme zu generieren. Der generierte Code wurde anschließend lokal gespeichert
 und in einer geeigneten Entwicklungsumgebung ausgeführt.
 Dabei wurden insbesondere Python und das Webframework
 Django verwendet. Im nächsten Schritt erfolgte die funktionale Überprüfung
-der generierten Systeme. Hierbei wurden zentrale
+der erstellten Systeme. Hierbei wurden zentrale
 Anwendungsfälle getestet, wie die Erstellung von Kunden,
 die Verwaltung von Buchungen sowie die Interaktion über
 die Benutzeroberfläche. Abschließend wurden die Ergebnisse dokumentiert und auf
@@ -357,10 +357,10 @@ Die Bewertung orientiert sich an den folgenden Kriterienbereichen. Die Checklist
     \item \textbf{Allgemeine Funktionalität}: Prüft, ob die Anwendung eine nutzbare
     Oberfläche mit Formularen, Navigation und konsistenter URL-Struktur 
     bereitstellt. Darüber hinaus werden erweiterte Funktionen wie Sortierung, 
-    Filterung, Pagination sowie vollständige CRUD-Operationen und eine 
+    Filterung, Pagination und eine 
     geeignete Fehlerbehandlung bewertet. Ergänzend wird geprüft, ob 
     Login/Logout, Session-Handling, Fehlermeldungen bei ungültigem Login 
-    sowie der Schutz geschützter Bereiche korrekt umgesetzt sind.
+    korrekt umgesetzt sind.
 
     \item \textbf{Geschäftsobjekte und CRUD-Funktionalität}: Prüft, ob zentrale 
     Geschäftsobjekte wie \textit{Customers, Orders, Rooms, Tasks und Invoices} 
@@ -416,7 +416,7 @@ Die funktionalen Kriterien bewerten die Umsetzung der fachlichen Anforderungen, 
 
 Die Kombination aus funktionalen, technischen und Integrationskriterien ermöglicht eine umfassende und mehrdimensionale Bewertung der generierten Systeme. Während die funktionalen Kriterien die fachliche Korrektheit überprüfen, analysieren die technischen Kriterien die interne Qualität der Implementierung. Die Integrationskriterien validieren das Zusammenspiel aller Systemkomponenten innerhalb realistischer Benutzerabläufe.
 
-Durch die Kombination dieser unterschiedlichen Kriterien entsteht eine umfassende Bewertung des Gesamtsystems hinsichtlich Funktionalität, Zuverlässigkeit, Benutzerfreundlichkeit und Leistungsfähigkeit.
+Das Zusammenwirken dieser unterschiedlichen Kriterien erlaubt eine umfassende Bewertung des Gesamtsystems hinsichtlich Funktionalität, Zuverlässigkeit, Benutzerfreundlichkeit und Leistungsfähigkeit.
 
 
 Mit dieser strukturierten Vorgehensweise entsteht eine nachvollziehbare und vergleichbare Grundlage zur Bewertung der entwickelten Systeme hinsichtlich Funktionalität, Qualität, Benutzerfreundlichkeit und Leistungsfähigkeit.
@@ -429,7 +429,7 @@ Mit dieser strukturierten Vorgehensweise entsteht eine nachvollziehbare und verg
 
 Für jedes Experiment werden die Ergebnisse zunächst in einer zusammenfassenden Tabelle dargestellt, die einen Überblick über den Erfüllungsgrad der allgemeinen Anforderungen bietet. Darüber hinaus werden die Bewertungen der einzelnen Funktionen und Anforderungen in detaillierten Tabellen im Anhang dokumentiert. Diese Vorgehensweise ermöglicht sowohl eine kompakte Darstellung der zentralen Ergebnisse im Hauptteil der Arbeit als auch eine transparente und nachvollziehbare Analyse der einzelnen Bewertungskriterien.
 
-Hierzu wurden drei Experimente an jedem der drei Modelle durchgeführt, die sich hinsichtlich des verwendeten Prompt-Designs unterscheiden. Im ersten Experiment wurde ein einfacher Basis-Prompt eingesetzt, um die Leistungsfähigkeit des Modells ohne weiterführende Prompt-Engineering-Techniken zu untersuchen. Das zweite Experiment verwendete einen strukturierten Prompt mit zusätzlichen Kontextinformationen und detaillierten Anforderungen. Im dritten Experiment wurde der strukturierte Prompt um eine explizite Rollendefinition erweitert, bei der das Modell die Rolle eines erfahrenen Softwarearchitekten und Full-Stack-Entwicklers einnahm.
+Hierzu wurden drei Experimente an jedem der drei Modelle durchgeführt, die sich hinsichtlich des verwendeten Prompt-Varianten unterscheiden. Im ersten Experiment wurde ein einfacher Basis Prompt eingesetzt, um die Leistungsfähigkeit des Modells ohne weiterführende Prompt-Engineering-Techniken zu untersuchen. Das zweite Experiment verwendete einen strukturierten Prompt mit zusätzlichen Kontextinformationen und detaillierten Anforderungen. Im dritten Experiment wurde der strukturierte Prompt um eine explizite Rollendefinition erweitert, bei der das Modell die Rolle eines erfahrenen Softwarearchitekten und Full-Stack-Entwicklers einnahm.
 
 Die Bewertung der generierten Anwendungen erfolgt anhand einer einheitlichen Checkliste, die auf den zuvor definierten funktionalen, technischen, integrationsbezogenen Kriterien basiert. 
 
@@ -464,11 +464,11 @@ Im Sinne der wissenschaftlichen Nachvollziehbarkeit und Reproduzierbarkeit wurde
 \newpage
 \section{Vergleich der Evaluationsergebnisse}
 
-Die durchgeführte Evaluation umfasste insgesamt neun Experimente, die aus der Kombination von drei LLMs (GPT-5.2, GPT-5.3-Codex und Gemini 3.1 Pro) mit drei unterschiedlichen Prompt-Strategien (Basis-Prompt, strukturierter Prompt und Role Prompting) entstanden. Im Mittelpunkt steht die Analyse des Einflusses von Modellwahl und Prompt-Gestaltung auf die Qualität der generierten Softwaresysteme.
+Die durchgeführte Evaluation umfasste insgesamt neun Experimente, die aus der Kombination von drei LLMs (GPT-5.2, GPT-5.3-Codex und Gemini 3.1 Pro) mit drei unterschiedlichen Prompt-Varianten (Basis-Prompt, strukturierter Prompt und Role Prompting) entstanden. Im Mittelpunkt steht die Analyse des Einflusses von Modellwahl und Prompt-Gestaltung auf die Qualität der generierten Softwaresysteme.
 
-Nach der Analyse der einzelnen Experimente erfolgt ein modell- und promptübergreifender Vergleich der Ergebnisse. Im Fokus steht die Identifikation der leistungsfähigsten Modell-Prompt-Kombination sowie die Untersuchung des Einflusses unterschiedlicher Prompt-Strategien auf die Qualität der generierten Softwaresysteme.
+Nach der Analyse der einzelnen Experimente erfolgt ein modell- und promptübergreifender Vergleich der Ergebnisse. Im Fokus steht die Identifikation der leistungsfähigsten Modell-Prompt-Kombination sowie die Untersuchung des Einflusses unterschiedlicher Prompt-Varianten auf die Qualität der generierten Softwaresysteme.
 
-Mit Ausnahme des Modells Gemini 3.1 Pro führte der Basis-Prompt insgesamt zu den geringsten Ergebnissen hinsichtlich Vollständigkeit, Funktionalität und Konsistenz der generierten Softwaresysteme. Durch die strukturierte Formulierung und die Bereitstellung zusätzlicher Kontextinformationen im strukturierten Prompt konnten die Modelle die Anforderungen vollständiger umsetzen und eine höhere Qualität der generierten Software erzielen. Die besten Ergebnisse wurden mit strukturiertem Prompt und Rollendefinition erreicht. Die Kombination aus einer klar strukturierten Aufgabenbeschreibung, ausführlichen Kontextinformationen und einer Rollendefinition führte zu den vollständigsten und konsistentesten Softwareimplementierungen.
+Mit Ausnahme des Modells Gemini 3.1 Pro führte der Basis Prompt insgesamt zu den geringsten Ergebnissen hinsichtlich Vollständigkeit, Funktionalität und Konsistenz der generierten Softwaresysteme. Durch die strukturierte Formulierung und die Bereitstellung zusätzlicher Kontextinformationen im strukturierten Prompt konnten die Modelle die Anforderungen vollständiger umsetzen und eine höhere Qualität der generierten Software erzielen. Die besten Ergebnisse wurden mit strukturiertem Prompt und Rollendefinition erreicht. Die Kombination aus einer klar strukturierten Aufgabenbeschreibung, ausführlichen Kontextinformationen und einer Rollendefinition führte zu den vollständigsten und konsistentesten Softwareimplementierungen.
 
 Die Ergebnisse zeigen, dass alle untersuchten Modelle grundsätzlich in der Lage waren, funktionale Softwarekomponenten zu generieren. Insbesondere grundlegende CRUD-Funktionalitäten, Benutzeroberflächen sowie zentrale Geschäftsobjekte konnten in den meisten Experimenten erfolgreich erstellt werden. Unterschiede zeigten sich jedoch hinsichtlich der Vollständigkeit und Qualität der generierten Systeme.
 
@@ -478,7 +478,7 @@ Die Bereitstellung zusätzlicher Kontextinformationen ermöglichte eine konsiste
 
 Während funktionale Anforderungen in vielen Fällen zumindest teilweise erfüllt wurden, zeigten sich weiterhin Defizite bei technischen Qualitätsmerkmalen. Insbesondere automatisierte Tests, erweiterte Validierungen und Integrationsmechanismen wurden von den Modellen nur eingeschränkt oder gar nicht umgesetzt. Dies deutet darauf hin, dass aktuelle LLMs zwar die Erstellung grundlegender Softwarestrukturen unterstützen können, jedoch Schwierigkeiten bei der konsistenten Umsetzung komplexerer Qualitätsanforderungen aufweisen.
 
-Insgesamt verdeutlichen die Ergebnisse, dass sowohl die Wahl des verwendeten Sprachmodells als auch die Gestaltung des Prompts einen erheblichen Einfluss auf die Qualität der generierten Software haben. Die Evaluation bestätigt, dass strukturierte und rollenbasierte Prompt-Strategien gegenüber einfachen Eingabeaufforderungen zu besseren Ergebnissen führen und die Fähigkeit der Modelle zur Generierung vollständiger Softwaresysteme deutlich verbessern können.
+Insgesamt verdeutlichen die Ergebnisse, dass sowohl die Wahl des verwendeten Sprachmodells als auch die Gestaltung des Prompts einen erheblichen Einfluss auf die Qualität der generierten Software haben. Die Evaluation bestätigt, dass strukturierte und rollenbasierte Prompt-Varianten gegenüber einfachen Eingabeaufforderungen zu besseren Ergebnissen führen und die Fähigkeit der Modelle zur Generierung vollständiger Softwaresysteme deutlich verbessern können.
 \newpage
 \begin{table}[H]
 \centering
@@ -509,12 +509,12 @@ GPT-5.3-Codex  – Role Prompting & 15 & 18 & 83,3\% \\
 \end{table}
 
 Insgesamt erzielte GPT-5.3-Codex in allen drei Experimenten die besten Resultate. Mit 15 von 18 möglichen Bewertungspunkten wurde die höchste Gesamtpunktzahl im Experiment mit Role Prompting erreicht.
-GPT-5.2 zeigte eine kontinuierliche Verbesserung mit zunehmender Prompt-Komplexität. Während der Basis-Prompt lediglich vier von 18 Punkten erreichte, konnte die Bewertung durch den strukturierten Prompt auf sieben Punkte und durch Role Prompting auf neun Punkte gesteigert werden. Dies deutet auf einen positiven Einfluss strukturierter Eingaben und expliziter Rollendefinitionen auf die Qualität der generierten Software hin.
-Bei Gemini 3.1 Pro konnte hingegen keine vergleichbare Entwicklung beobachtet werden. Das beste Ergebnis wurde bereits mit dem Basis-Prompt erzielt. Die Verwendung zusätzlicher Kontextinformationen sowie von Role Prompting führte in den vorliegenden Experimenten sogar zu einer Reduktion der erreichten Bewertungspunkte.
+GPT-5.2 zeigte eine kontinuierliche Verbesserung mit zunehmender Prompt-Komplexität. Während der Basis Prompt lediglich vier von 18 Punkten erreichte, konnte die Bewertung durch den strukturierten Prompt auf sieben Punkte und durch Role Prompting auf neun Punkte gesteigert werden. Dies deutet auf einen positiven Einfluss strukturierter Eingaben und expliziter Rollendefinitionen auf die Qualität der generierten Software hin.
+Bei Gemini 3.1 Pro konnte hingegen keine vergleichbare Entwicklung beobachtet werden. Das beste Ergebnis wurde bereits mit dem Basis Prompt erzielt. Die Verwendung zusätzlicher Kontextinformationen sowie von Role Prompting führte in den vorliegenden Experimenten sogar zu einer Reduktion der erreichten Bewertungspunkte.
 
 Über alle Experimente hinweg zeigt sich, dass GPT-5.3-Codex die robusteste Leistung aufwies und die definierten Evaluationskriterien am umfassendsten erfüllte. Darüber hinaus verdeutlichen die Ergebnisse, dass der Einfluss von Prompt Engineering modellabhängig ist. Während GPT-5.2 deutlich von strukturierten und rollenbasierten Prompts profitierte, konnte dieser Effekt bei Gemini 3.1 Pro nicht nachgewiesen werden.
 
-Der Vergleich der Experimente zeigt, dass sowohl die Wahl des Sprachmodells als auch die verwendete Prompt-Strategie einen deutlichen Einfluss auf die Qualität der generierten Software haben. Die Ergebnisse verdeutlichen, dass die Qualität der generierten Software in direktem Zusammenhang mit der Qualität des verwendeten Prompts steht. Je präziser, strukturierter und detaillierter die Anweisungen formuliert werden, desto besser können die Sprachmodelle die Anforderungen interpretieren und in eine funktionsfähige Software umsetzen.
+Der Vergleich der Experimente zeigt, dass sowohl die Wahl des Sprachmodells als auch die verwendeten Prompt-Varianten einen deutlichen Einfluss auf die Qualität der generierten Software haben. Die Ergebnisse verdeutlichen, dass die Qualität der generierten Software in direktem Zusammenhang mit der Qualität des verwendeten Prompts steht. Je präziser, strukturierter und detaillierter die Anweisungen formuliert werden, desto besser können die Sprachmodelle die Anforderungen interpretieren und in eine funktionsfähige Software umsetzen.
 
 
 Zusammenfassend zeigen die Ergebnisse, dass GPT seine Stärken vor allem bei der Gestaltung der Benutzeroberfläche besitzt, während Gemini den Schwerpunkt auf die Implementierung der Backend-Komponenten legt. GPT-5.3-Codex vereinte beide Aspekte am erfolgreichsten und lieferte insgesamt das vollständigste und funktionsfähigste Softwaresystem im Rahmen der durchgeführten Untersuchung.

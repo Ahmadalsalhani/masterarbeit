@@ -1,7 +1,7 @@
 %!TEX root = ../thesis.tex
-\subsection{GPT-5.3-Codex mit Strukturiertem Prompt}
+\subsection{GPT-5.3-Codex mit strukturiertem Prompt}
 
-Im zweiten Experiment wurde GPT-5.3-GPT-5.3-Codex mit Strukturiertem Prompt verwendet. Im Rahmen der Implementierung der Kundenerfassung trat ein Validierungsfehler auf, der das Speichern neuer Kundendatensätze verhinderte. Die Ursache lag in einer Inkonsistenz zwischen Frontend und Backend: Während das Backend bestimmte Pflichtfelder für die Verarbeitung des Formulars voraussetzte, wurden diese im Frontend nicht zur Eingabe bereitgestellt. Dadurch konnte die Formularvalidierung nicht erfolgreich abgeschlossen werden.
+Im zweiten Experiment (\ref{tab:GPT-5.3-Codex_strukturiertes_prompt_evaluation}) wurde GPT-5.3-Codex mit Strukturiertem Prompt verwendet. In der Implementierung der Kundenerfassung trat ein Validierungsfehler auf, der das Speichern neuer Kundendatensätze verhinderte. Die Ursache lag in einer Inkonsistenz zwischen Frontend und Backend: Während das Backend bestimmte Pflichtfelder für die Verarbeitung des Formulars voraussetzte, wurden diese im Frontend nicht zur Eingabe bereitgestellt. Dadurch konnte die Formularvalidierung nicht erfolgreich abgeschlossen werden.
 Da die Kundenverwaltung die Grundlage für nachgelagerte Geschäftsprozesse bildet, waren auch Funktionen wie die Erstellung von Buchungen und Rechnungen nicht ausführbar. Die Behebung des Fehlers erforderte die Abstimmung der Frontend-Eingabemasken mit den im Backend definierten Formular- und Datenmodellanforderungen, sodass alle erforderlichen Informationen vollständig übermittelt und verarbeitet werden konnten.
 
 \newpage

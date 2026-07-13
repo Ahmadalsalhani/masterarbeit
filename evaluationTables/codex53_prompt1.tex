@@ -2,7 +2,7 @@
 In diesem Abschnitt werden die Ergebnisse des Experiments –– GPT-5.3-Codex mit Basis Prompt –– dargestellt (\ref{tab:GPT-5.3-Codex_basis_prompt_evaluation}).
 Die Bewertung erfolgt anhand der zuvor definierten Evaluationskriterien.
 Alle Validierungs- und Testverfahren werden mithilfe eines separaten Prompts erstellt und durchgeführt. Dadurch können die implementierten Funktionen nach jedem Entwicklungsschritt systematisch überprüft werden. Dieses Vorgehen stellt sicher, dass neu entwickelte Komponenten die definierten Anforderungen erfüllen und dass bestehende Funktionalitäten durch Änderungen nicht unbeabsichtigt beeinträchtigt werden. Auf diese Weise wird eine kontinuierliche Qualitätssicherung während des gesamten Entwicklungsprozesses gewährleistet.
-Darüber hinaus wurden zusätzliche Domänenfunktionen wie \textit{Order Item}, \textit{Occupancy Items}, \textit{Services}, Kommentare und Raumstandorte erfolgreich umgesetzt.
+Darüber hinaus wurden zusätzliche Domänenfunktionen wie Order Item, Occupancy Items, Services, Kommentare und Raumstandorte erfolgreich umgesetzt.
 
 
 \newpage
@@ -54,7 +54,7 @@ Das generierte System erreicht 10 von 18 möglichen Bewertungspunkten und erfül
 
 
 
-Im Bereich der Qualitätssicherung konnte GPT-5.3-Codex die im Prompt definierten Anforderungen weitgehend erfüllen. Der Basis-Prompt forderte explizit die Erstellung von Unit-Tests für relevante Softwarekomponenten, einschließlich Datenmodellen, Geschäftslogik und Views. Darüber hinaus wurde die Implementierung eines Integrationstests verlangt, der den vollständigen Geschäftsprozess von der Anlage eines Kunden über die Erstellung einer Buchung bis hin zur Generierung einer Rechnung abdeckt.
+Im Bereich der Qualitätssicherung konnte GPT-5.3-Codex die im Prompt definierten Anforderungen weitgehend erfüllen. Der Basis Prompt forderte explizit die Erstellung von Unit-Tests für relevante Softwarekomponenten, einschließlich Datenmodellen, Geschäftslogik und Views. Darüber hinaus wurde die Implementierung eines Integrationstests verlangt, der den vollständigen Geschäftsprozess von der Anlage eines Kunden über die Erstellung einer Buchung bis hin zur Generierung einer Rechnung abdeckt.
 
 Die Analyse des generierten Systems zeigte, dass für die wesentlichen Komponenten der Anwendung automatisierte Unit-Tests erzeugt wurden. Insbesondere wurden Tests für Datenmodelle, Controller- beziehungsweise View-Komponenten sowie Teile der Geschäftslogik implementiert. Darüber hinaus enthielt das generierte Projekt automatisierte Modell-Validierungen der definierten Geschäftsprozesse.
 
@@ -68,4 +68,4 @@ Auch die technischen Kriterien wurden nur teilweise erfüllt. Positiv hervorzuhe
 
 Im Bereich der Integration wurden lediglich Teilergebnisse erzielt. Zwar sind grundlegende Interaktionen zwischen Frontend und Backend vorhanden, jedoch fehlen vollständig umgesetzte End-to-End-Workflows sowie umfassende Integrationstests. Dadurch wird die praktische Einsetzbarkeit der Anwendung eingeschränkt, da das Zusammenspiel einzelner Komponenten nicht durchgängig abgesichert ist.
 
-Insgesamt erreicht das generierte System 10 von 18 möglichen Bewertungspunkten und erfüllt damit etwa 55,6\% der definierten Evaluationskriterien. Die Ergebnisse verdeutlichen, dass GPT-5.3-Codex mit Basis-Prompts in der Lage ist, umfangreiche funktionale Anforderungen sowie die grundlegende Geschäftslogik erfolgreich umzusetzen. Gleichzeitig bestehen Defizite in den Bereichen Autorisierung, Wartbarkeit, Integration und Performance, wodurch zusätzliche Entwicklungs- und Qualitätssicherungsmaßnahmen erforderlich sind, um ein produktionsreifes System zu erhalten.
+Insgesamt erreicht das generierte System 10 von 18 möglichen Bewertungspunkten und erfüllt damit etwa 55,6\% der definierten Evaluationskriterien. Die Ergebnisse verdeutlichen, dass GPT-5.3-Codex mit Basis Prompts in der Lage ist, umfangreiche funktionale Anforderungen sowie die grundlegende Geschäftslogik erfolgreich umzusetzen. Gleichzeitig bestehen Defizite in den Bereichen Autorisierung, Wartbarkeit, Integration und Performance, wodurch zusätzliche Entwicklungs- und Qualitätssicherungsmaßnahmen erforderlich sind, um ein produktionsreifes System zu erhalten.

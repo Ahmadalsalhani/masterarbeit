@@ -1,21 +1,21 @@
-\subsection{GPT-5.2 mit strukturiertem Prompt und Rollendefinition}
-Das zweite Experiment wurde unter Verwendung eines strukturierten und detailliert definierten Prompts durchgeführt.
-Insgesamt erreichte GPT-5.2 mit dem strukturiertem Prompt sieben von 18 möglichen Bewertungspunkten (\ref{tab:gptV2}).
+\subsection{GPT-5.2 mit strukturiertem Prompt}
+Das zweite Experiment (\ref{tab:gptv2}) wurde unter Verwendung eines strukturierten und detailliert definierten Prompts durchgeführt.
+Insgesamt erreichte GPT-5.2 mit dem strukturiertem Prompt sieben von 18 möglichen Bewertungspunkten.
 Der verwendete Prompt enthielt detaillierte
 Vorgaben hinsichtlich der Systemarchitektur, der funktionalen Anforderungen, 
 der technischen Rahmenbedingungen sowie der erwarteten Qualitätsmerkmale der Anwendung.
 
-Im Gegensatz zum Basis-Prompt wurden die Anforderungen nicht lediglich allge
+Im Gegensatz zum Basis Prompt wurden die Anforderungen nicht lediglich allge
 mein beschrieben, sondern in einer klar strukturierten Form spezifiziert.
 Dadurch erhielt das Modell zusätzliche Kontextinformationen über die zu implementierenden
 Komponenten, deren Beziehungen sowie die erwartete Systemfunktionalität.
 
-Die \ref{tab:gptV2} stellt die Ergebnisse der Evaluation dar.
+Die \ref{tab:gptv2} stellt die Ergebnisse der Evaluation dar.
 \subsection{GPT-5.2 mit strukturiertem Prompt und Rollendefinition}
 
-Im dritten Experiment wurde GPT-5.2 mittels Role Prompting angewiesen, die Rolle eines erfahrenen Softwarearchitekten und Full-Stack-Entwicklers einzunehmen. Es sollte untersucht werden, ob die explizite Rollendefinition die Qualität und Vollständigkeit der generierten Lösung weiter verbessert wird.
+Im dritten Experiment (\ref{tab:gptv3}) wurde GPT-5.2 mittels Role Prompting angewiesen, die Rolle eines erfahrenen Softwarearchitekten und Full-Stack-Entwicklers einzunehmen. Es sollte untersucht werden, ob die explizite Rollendefinition die Qualität und Vollständigkeit der generierten Lösung weiter verbessert wird.
 
-Die \ref{tab:gpt5.2_Rolle_prompt_evaluation} zeigt die Ergebnisse der Evaluation.
+Die \ref{tab:gptv3} zeigt die Ergebnisse der Evaluation.
 
 
 \newpage
@@ -24,7 +24,7 @@ Die \ref{tab:gpt5.2_Rolle_prompt_evaluation} zeigt die Ergebnisse der Evaluation
 \small
 \caption{Ergebnisse von GPT-5.2 mit strukturiertem Prompt} 
 
-\label{tab:gptV2}
+\label{tab:gptv2}
 \renewcommand{\arraystretch}{1.15}
 
 \begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
@@ -68,7 +68,7 @@ Das generierte System erreicht sieben von 18 möglichen Bewertungspunkten und er
 
 
 \newpage
-Im Vergleich zum Basis-Prompt zeigt sich eine Verbesserung in mehreren Evaluationskriterien.
+Im Vergleich zum Basis Prompt zeigt sich eine Verbesserung in mehreren Evaluationskriterien.
 Insbesondere die Umsetzung funktionaler Anforderungen und
 die Strukturierung der generierten Anwendung wurden verbessert.
 Dennoch bestehen weiterhin Defizite bei automatisierten Tests, Integrationsmechanismen und Performance-Aspekten.
@@ -97,9 +97,9 @@ oder gar nicht implementiert wurden, konnten im zweiten Experiment nahezu al-
 le zentralen Geschäftsobjekte einschließlich ihrer CRUD-Funktionalitäten generiert
 werden.
 
-Die Ergebnisse \ref{tab:gptV2} verdeutlichen somit,dass ein strukturierter Prompt die funktionale Vollständigkeit eines KI-generierten
+Die Ergebnisse (\ref{tab:gptv2}) verdeutlichen somit,dass ein strukturierter Prompt die funktionale Vollständigkeit eines generierten
 Softwaresystems erheblich verbessern kann, jedoch nicht automatisch zu einer umfassenden technischen Qualitätssicherung führt.
 
-Insgesamt zeigen die Ergebnisse \ref{tab:gptV2}, dass die präzisere Formulierung des Prompts zu einer deutlichen
+Insgesamt zeigen die Ergebnisse (\ref{tab:gptv2}), dass die präzisere Formulierung des Prompts zu einer deutlichen
 Verbesserung der generierten Software führte. Insbesondere die funktionalen
 Anforderungen wurden wesentlich vollständiger umgesetzt als im ersten Experiment.

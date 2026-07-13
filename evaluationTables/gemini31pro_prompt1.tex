@@ -1,5 +1,5 @@
 \subsection{Gemini 3.1 Pro mit Basis Prompt}
-Die Ergebnisse des ersten Experiments \ref{tab:Gemini_3_1_Basis_Prompt} zeigen, dass Gemini 3.1 Pro bereits mit einem einfachen Basis-Prompt eine funktionsfähige Django-Anwendung generieren kann. Das Modell implementierte die wesentlichen Geschäftsobjekte des Hotelmanagementsystems sowie eine vollständige CRUD-Funktionalität über das integrierte Django-Admin-Interface. Darüber hinaus wurden Funktionen wie Authentifizierung, Formulare, Suchfunktionen, Filtermöglichkeiten und Pagination automatisch bereitgestellt, wodurch die allgemeinen funktionalen Anforderungen weitgehend erfüllt werden konnten.
+Die Ergebnisse des ersten Experiments (\ref{tab:Gemini_3_1_Basis_Prompt}) zeigen, dass Gemini 3.1 Pro bereits mit einem einfachen Basis Prompt eine funktionsfähige Django-Anwendung generieren kann. Das Modell implementierte die wesentlichen Geschäftsobjekte des Hotelmanagementsystems sowie eine vollständige CRUD-Funktionalität über das integrierte Django-Admin-Interface. Darüber hinaus wurden Funktionen wie Authentifizierung, Formulare, Suchfunktionen, Filtermöglichkeiten und Pagination automatisch bereitgestellt, wodurch die allgemeinen funktionalen Anforderungen weitgehend erfüllt werden konnten.
 
 Im Bereich der Domänenlogik wurden grundlegende fachliche Funktionen umgesetzt. Dazu zählen insbesondere die automatische Berechnung von Buchungspreisen auf Basis der Aufenthaltsdauer sowie die Verwaltung verschiedener Buchungsstatus. Erweiterte Anforderungen wie die Verwaltung zusätzlicher Dienstleistungen, Order Items oder weiterführende Geschäftsprozesse wurden hingegen nicht implementiert. Auch die Benutzer- und Rechteverwaltung beschränkt sich auf die standardmäßigen Authentifizierungsmechanismen von Django, sodass keine differenzierte rollenbasierte Zugriffskontrolle vorhanden ist.
 
@@ -11,7 +11,7 @@ Im Bereich der Performance und Skalierbarkeit zeigt die generierte Anwendung deu
 
 Gemini 3.1 Pro zeigte einen anderen Schwerpunkt. Das Modell implementierte die Backend-Komponenten, einschließlich der Geschäftslogik und der Controller, weitgehend vollständig. Die entsprechenden Funktionen wurden jedoch im Frontend nur teilweise integriert. Dadurch waren zahlreiche implementierte Funktionalitäten über die Benutzeroberfläche nicht oder nur eingeschränkt zugänglich. Zudem fiel die Gestaltung der Benutzeroberfläche im Vergleich zu GPT 5.2 einfacher aus.
 
-Insgesamt erreicht die von Gemini 3.1 Pro generierte Lösung mit Basis-Prompt neun von 18 möglichen Bewertungspunkten, was einem Erfüllungsgrad von etwa 50 Prozent entspricht \ref{tab:Gemini_3_1_Basis_Prompt}.
+Insgesamt erreicht die von Gemini 3.1 Pro generierte Lösung mit Basis Prompt neun von 18 möglichen Bewertungspunkten, was einem Erfüllungsgrad von etwa 50 Prozent entspricht (\ref{tab:Gemini_3_1_Basis_Prompt}).
 
 Zusammenfassend zeigt das erste Experiment, dass Gemini 3.1 Pro bereits mit einem einfachen Basis-Prompt in der Lage ist, eine funktionierende Grundanwendung auf Basis des Django-Frameworks zu generieren. Die Ergebnisse verdeutlichen jedoch auch, dass ohne zusätzliche Kontextinformationen und detaillierte Anweisungen, insbesondere komplexere fachliche Anforderungen, erweiterte Sicherheitsmechanismen sowie Qualitätsaspekte nur unzureichend berücksichtigt werden.
 
@@ -19,7 +19,7 @@ Zusammenfassend zeigt das erste Experiment, dass Gemini 3.1 Pro bereits mit eine
 \begin{table}[H]
 \centering
 \footnotesize
-\caption{Ergebnisse von Gemini 3.1 Pro mit Basis-Prompt}
+\caption{Ergebnisse von Gemini 3.1 Pro mit Basis Prompt}
 \label{tab:Gemini_3_1_Basis_Prompt}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}

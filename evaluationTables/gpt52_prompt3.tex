@@ -3,7 +3,7 @@
 \centering
 \small
 \caption{Ergebnisse von GPT-5.2 mit strukturiertem Prompt und Rollendefinition}
-\label{tab:gpt5.2_Rolle_prompt_evaluation}
+\label{tab:gptv3}
 \renewcommand{\arraystretch}{1.15}
 
 \begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{5.0cm} >{\centering\arraybackslash}p{1.4cm} >{\RaggedRight\arraybackslash}X@{}}
@@ -45,10 +45,10 @@ Das generierte System erreicht neun von 18 möglichen Bewertungspunkten und erf�
 \end{tabularx}
 \end{table}
 
-Die Ergebnisse \ref{tab:gpt5.2_Rolle_prompt_evaluation} zeigen eine weitere Verbesserung gegenüber den vorherigen Experimenten. Insbesondere die fachliche Vollständigkeit, die Strukturierung des Codes sowie die Umsetzung technischer Anforderungen wurden verbessert. Dennoch konnten nicht alle Evaluationskriterien vollständig erfüllt werden.
+Die Ergebnisse (\ref{tab:gptv3}) zeigen eine weitere Verbesserung gegenüber den vorherigen Experimenten. Insbesondere die fachliche Vollständigkeit, die Strukturierung des Codes sowie die Umsetzung technischer Anforderungen wurden verbessert. Dennoch konnten nicht alle Evaluationskriterien vollständig erfüllt werden.
 
 Die Resultate legen nahe, dass Role Prompting einen positiven Einfluss auf die Qualität der generierten Software hat und gegenüber einfacheren Prompt-Strategien zu konsistenteren Ergebnissen führt. Besonders auffällig war die verbesserte Umsetzung der Domänenobjekte und REST-Schnittstellen. Während im ersten Experiment mehrere Komponenten nur teilweise oder gar nicht implementiert wurden, konnten im zweiten Experiment nahezu alle zentralen Geschäftsobjekte einschließlich ihrer CRUD-Funktionalitäten generiert werden. Zusätzlich wurden weitere Module wie Services, Kommentare, Occupancy Items und Room Locations erfolgreich umgesetzt.
 Die stärkere Strukturierung des Prompts führte außerdem zu einer besseren Kohärenz zwischen den einzelnen Komponenten des Systems. Die Anzahl unvollständiger oder widersprüchlicher Implementierungen wurde deutlich reduziert, da der strukturierte Prompt dem Modell einen klar definierten Kontext sowie präzisere Zielvorgaben bereitstellte.
 
-Trotz der erkennbaren Verbesserungen bestehen weiterhin Einschränkungen hinsichtlich der technischen Qualitätssicherung. Insbesondere wurden keine automatisierten Unit- oder Integrationstests erstellt. Die Ergebnisse verdeutlichen somit, dass ein strukturierter Prompt mit Rollendefinition die funktionale Vollständigkeit und Konsistenz eines KI-generierten Softwaresystems erheblich verbessern kann, jedoch nicht automatisch zu einer umfassenden technischen Absicherung der Anwendung führt.
+Trotz der erkennbaren Verbesserungen bestehen weiterhin Einschränkungen hinsichtlich der technischen Qualitätssicherung. Insbesondere wurden keine automatisierten Unit- oder Integrationstests erstellt. Die Ergebnisse verdeutlichen somit, dass ein strukturierter Prompt mit Rollendefinition die funktionale Vollständigkeit und Konsistenz eines erstellten Softwaresystems erheblich verbessern kann, jedoch nicht automatisch zu einer umfassenden technischen Absicherung der Anwendung führt.
 
